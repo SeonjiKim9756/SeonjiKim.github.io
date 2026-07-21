@@ -13,8 +13,6 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.platypus import (
     HRFlowable,
-    Image,
-    PageBreak,
     Paragraph,
     SimpleDocTemplate,
     Spacer,
@@ -27,7 +25,6 @@ ROOT = Path(__file__).resolve().parents[1]
 PROFILE_FILE = ROOT / "data" / "profile.json"
 PUBLICATION_FILE = ROOT / "data" / "publications.json"
 OUTPUT_FILE = ROOT / "assets" / "cv" / "Seonji_Kim_CV.pdf"
-PROFILE_IMAGE = ROOT / "assets" / "profile.jpg"
 
 PAGE_WIDTH, PAGE_HEIGHT = A4
 MARGIN_X = 18 * mm
@@ -148,6 +145,16 @@ def build_styles() -> dict[str, ParagraphStyle]:
             leading=13,
             textColor=PALETTE["muted"],
         ),
+        "year_group": ParagraphStyle(
+            "YearGroup",
+            parent=styles["BodyText"],
+            fontName="Helvetica-Bold",
+            fontSize=10,
+            leading=12,
+            textColor=PALETTE["muted"],
+            spaceBefore=4,
+            spaceAfter=6,
+        ),
         "pub_title": ParagraphStyle(
             "PubTitle",
             parent=styles["BodyText"],
@@ -198,7 +205,6 @@ def make_timeline(items: list[dict], styles: dict[str, ParagraphStyle], include_
                 ("RIGHTPADDING", (0, 0), (-1, -1), 0),
                 ("TOPPADDING", (0, 0), (-1, -1), 0),
                 ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
-                ("LINEBELOW", (0, 0), (-1, -1), 0.35, PALETTE["line"]),
             ]
         )
     )
@@ -224,7 +230,6 @@ def make_teaching(items: list[dict], styles: dict[str, ParagraphStyle]) -> Table
                 ("RIGHTPADDING", (0, 0), (-1, -1), 0),
                 ("TOPPADDING", (0, 0), (-1, -1), 0),
                 ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
-                ("LINEBELOW", (0, 0), (-1, -1), 0.35, PALETTE["line"]),
             ]
         )
     )
@@ -232,11 +237,14 @@ def make_teaching(items: list[dict], styles: dict[str, ParagraphStyle]) -> Table
 
 
 def make_publication_block(paper: dict, styles: dict[str, ParagraphStyle]) -> list:
-    authors = ", ".join(paper.get("authors", []))
+    authors = ", ".join(
+        f"<b>{author}</b>" if author == "Seonji Kim" else author
+        for author in paper.get("authors", [])
+    )
     venue = paper.get("venue", "")
     summary = f"{authors}<br/>{venue}"
     return [
-        Paragraph(f"{paper['year']} · {paper['title']}", styles["pub_title"]),
+        Paragraph(paper["title"], styles["pub_title"]),
         Paragraph(summary, styles["pub_meta"]),
         Spacer(1, 3),
     ]
@@ -276,14 +284,10 @@ def build_pdf() -> None:
     intro_left = [
         Paragraph(profile["name"], styles["name"]),
         Paragraph(" · ".join(profile.get("heroMeta", [])), styles["meta"]),
-        Spacer(1, 6),
-        paragraph(profile.get("statement", ""), styles["statement"]),
     ]
     intro_right = [Paragraph(updated_stamp, styles["stamp"])]
-    if PROFILE_IMAGE.exists():
-        intro_right.extend([Spacer(1, 6), Image(str(PROFILE_IMAGE), width=33 * mm, height=42 * mm)])
 
-    intro_table = Table([[intro_left, intro_right]], colWidths=[CONTENT_WIDTH - 42 * mm, 42 * mm])
+    intro_table = Table([[intro_left, intro_right]], colWidths=[CONTENT_WIDTH - 54 * mm, 54 * mm])
     intro_table.setStyle(
         TableStyle(
             [
@@ -297,13 +301,13 @@ def build_pdf() -> None:
     )
     story.extend([intro_table, Spacer(1, 10), HRFlowable(width="100%", thickness=0.8, color=PALETTE["line"]), Spacer(1, 12)])
 
-    story.append(Paragraph("ABOUT", styles["label"]))
-    story.append(Spacer(1, 4))
-    story.append(paragraph(profile.get("about", ""), styles["body"]))
-    story.append(Spacer(1, 10))
-    story.append(Paragraph("RESEARCH INTERESTS", styles["label"]))
-    story.append(Spacer(1, 4))
-    story.append(Paragraph(" · ".join(profile.get("interests", [])), styles["body"]))
+    story.extend(section_heading("Publications", styles))
+    current_year = None
+    for paper in publications.get("publications", []):
+        if paper["year"] != current_year:
+            current_year = paper["year"]
+            story.append(Paragraph(str(current_year), styles["year_group"]))
+        story.extend(make_publication_block(paper, styles))
 
     story.extend(section_heading("Research Experience", styles))
     story.append(make_timeline(profile.get("research", []), styles, include_meta=True))
@@ -314,9 +318,12 @@ def build_pdf() -> None:
     story.extend(section_heading("Teaching", styles))
     story.append(make_teaching(profile.get("teaching", []), styles))
 
-    story.extend(section_heading("Selected Publications", styles))
-    for paper in publications.get("publications", []):
-        story.extend(make_publication_block(paper, styles))
+    story.extend(section_heading("About", styles))
+    story.append(paragraph(profile.get("about", ""), styles["body"]))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("RESEARCH INTERESTS", styles["label"]))
+    story.append(Spacer(1, 4))
+    story.append(Paragraph(" · ".join(profile.get("interests", [])), styles["body"]))
 
     doc.build(story, onFirstPage=on_page, onLaterPages=on_page)
 

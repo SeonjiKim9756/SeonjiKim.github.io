@@ -244,7 +244,7 @@
       "pdf": "https://dblp.org/rec/conf/ismar/KimJOOKWLAY22",
       "bibtex": "https://dblp.org/rec/conf/ismar/KimJOOKWLAY22.bib",
       "record": "https://dblp.org/rec/conf/ismar/KimJOOKWLAY22",
-      "bibtexText": ""
+      "bibtexText": "@inproceedings{DBLP:conf/ismar/KimJOOKWLAY22,\n  author       = {Seonji Kim and\n                  Hyuckjin Jang and\n                  Kyung Taek Oh and\n                  Seoyoung Oh and\n                  Dooyoung Kim and\n                  Woontack Woo and\n                  Jeongmi Lee and\n                  Jaehong Ahn and\n                  Sang Ho Yoon},\n  title        = {Bring Store in My Room: {AR} Store Authoring System for Spatial Experience\n                  in Mobile Shopping},\n  booktitle    = {2022 {IEEE} International Symposium on Mixed and Augmented Reality\n                  Adjunct (ISMAR-Adjunct), Singapore, Singapore, October 17-21, 2022},\n  pages        = {654--656},\n  publisher    = {{IEEE}},\n  year         = {2022},\n  url          = {https://doi.org/10.1109/ISMAR-Adjunct57072.2022.00135},\n  doi          = {10.1109/ISMAR-ADJUNCT57072.2022.00135},\n  timestamp    = {Fri, 05 Jun 2026 19:41:29 +0200},\n  biburl       = {https://dblp.org/rec/conf/ismar/KimJOOKWLAY22.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
     },
     {
       "id": "translider",
@@ -264,7 +264,7 @@
       "pdf": "https://dblp.org/rec/conf/ismar/YoonKW22",
       "bibtex": "https://dblp.org/rec/conf/ismar/YoonKW22.bib",
       "record": "https://dblp.org/rec/conf/ismar/YoonKW22",
-      "bibtexText": ""
+      "bibtexText": "@inproceedings{DBLP:conf/ismar/YoonKW22,\n  author       = {Boram Yoon and\n                  Seonji Kim and\n                  Woontack Woo},\n  title        = {TranSlider: User-Controlled Augmented Content Presence Visualization\n                  in {AR} Collaboration},\n  booktitle    = {2022 {IEEE} International Symposium on Mixed and Augmented Reality\n                  Adjunct (ISMAR-Adjunct), Singapore, Singapore, October 17-21, 2022},\n  pages        = {714--717},\n  publisher    = {{IEEE}},\n  year         = {2022},\n  url          = {https://doi.org/10.1109/ISMAR-Adjunct57072.2022.00150},\n  doi          = {10.1109/ISMAR-ADJUNCT57072.2022.00150},\n  timestamp    = {Mon, 26 Jun 2023 20:44:01 +0200},\n  biburl       = {https://dblp.org/rec/conf/ismar/YoonKW22.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
     }
   ]
 }

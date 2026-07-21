@@ -4,6 +4,7 @@
   "heroMeta": ["Ph.D. Student", "KAIST"],
   "statement": "Designing **shared spatial experiences** that connect people, tasks, and heterogeneous physical environments.",
   "about": "I am a **Ph.D. student** in the **Graduate School of Culture Technology at KAIST** and a member of the **Ubiquitous Virtual Reality Lab**, advised by **Prof. Woontack Woo**. My work explores how **augmented reality** and **spatial computing** can support collaboration across different physical environments.",
+  "aboutHtml": "I am a <strong>Ph.D. student</strong> in the <strong><a href=\"https://ct.kaist.ac.kr/\" target=\"_blank\" rel=\"noreferrer\">Graduate School of Culture Technology at KAIST</a></strong> and a member of the <strong><a href=\"https://uvrlab.org/\" target=\"_blank\" rel=\"noreferrer\">Ubiquitous Virtual Reality Lab</a></strong>, advised by <strong>Prof. Woontack Woo</strong>. My work explores how <strong>augmented reality</strong> and <strong>spatial computing</strong> can support collaboration across different physical environments.",
   "socialLinks": [
     {
       "label": "Email",
