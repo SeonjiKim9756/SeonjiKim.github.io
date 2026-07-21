@@ -1,0 +1,44 @@
+id: "translation-gain"
+title: "The Effects of Spatial Configuration on Relative Translation Gain Thresholds in Redirected Walking"
+authors:
+  - "Dooyoung Kim"
+  - "Seonji Kim"
+  - "Jae-eun Shin"
+  - "Boram Yoon"
+  - "Jinwook Kim"
+  - "Jeongmi Lee"
+  - "Woontack Woo"
+year: 2023
+venue: "Virtual Reality 27(2), 2023"
+abstract: "This study examines how spatial configuration affects relative translation gain thresholds in redirected walking. It investigates perceptual sensitivity to movement manipulation under different environmental arrangements."
+doi: ""
+record: "https://dblp.org/rec/journals/vr/KimKSYKLW23"
+
+main_figure: ""
+figure_caption: ""
+
+visual_type: walking
+
+bibtex: |
+  @article{DBLP:journals/vr/KimKSYKLW23,
+    author       = {Dooyoung Kim and
+                    Seonji Kim and
+                    Jae{-}eun Shin and
+                    Boram Yoon and
+                    Jinwook Kim and
+                    Jeongmi Lee and
+                    Woontack Woo},
+    title        = {The effects of spatial configuration on relative translation gain
+                    thresholds in redirected walking},
+    journal      = {Virtual Real.},
+    volume       = {27},
+    number       = {2},
+    pages        = {1233--1250},
+    year         = {2023},
+    url          = {https://doi.org/10.1007/s10055-022-00734-3},
+    doi          = {10.1007/S10055-022-00734-3},
+    timestamp    = {Fri, 05 Jun 2026 19:41:28 +0200},
+    biburl       = {https://dblp.org/rec/journals/vr/KimKSYKLW23.bib},
+    bibsource    = {dblp computer science bibliography, https://dblp.org}
+  }
+bibtex_type: inproceedings

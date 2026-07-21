@@ -1,0 +1,48 @@
+id: "bring-store"
+title: "Bring Store in My Room: AR Store Authoring System for Spatial Experience in Mobile Shopping"
+authors:
+  - "Seonji Kim"
+  - "Hyuckjin Jang"
+  - "Kyung Taek Oh"
+  - "Seoyoung Oh"
+  - "Dooyoung Kim"
+  - "Woontack Woo"
+  - "Jeongmi Lee"
+  - "Jaehong Ahn"
+  - "Sang Ho Yoon"
+year: 2022
+venue: "IEEE ISMAR Adjunct, 2022"
+abstract: "Bring Store in My Room is an AR authoring system that brings a store-like spatial experience into a user’s room for mobile shopping."
+doi: ""
+record: "https://dblp.org/rec/conf/ismar/KimJOOKWLAY22"
+
+main_figure: ""
+figure_caption: ""
+
+visual_type: environment
+
+bibtex: |
+  @inproceedings{DBLP:conf/ismar/KimJOOKWLAY22,
+    author       = {Seonji Kim and
+                    Hyuckjin Jang and
+                    Kyung Taek Oh and
+                    Seoyoung Oh and
+                    Dooyoung Kim and
+                    Woontack Woo and
+                    Jeongmi Lee and
+                    Jaehong Ahn and
+                    Sang Ho Yoon},
+    title        = {Bring Store in My Room: {AR} Store Authoring System for Spatial Experience
+                    in Mobile Shopping},
+    booktitle    = {2022 {IEEE} International Symposium on Mixed and Augmented Reality
+                    Adjunct (ISMAR-Adjunct), Singapore, Singapore, October 17-21, 2022},
+    pages        = {654--656},
+    publisher    = {{IEEE}},
+    year         = {2022},
+    url          = {https://doi.org/10.1109/ISMAR-Adjunct57072.2022.00135},
+    doi          = {10.1109/ISMAR-ADJUNCT57072.2022.00135},
+    timestamp    = {Fri, 05 Jun 2026 19:41:29 +0200},
+    biburl       = {https://dblp.org/rec/conf/ismar/KimJOOKWLAY22.bib},
+    bibsource    = {dblp computer science bibliography, https://dblp.org}
+  }
+bibtex_type: inproceedings

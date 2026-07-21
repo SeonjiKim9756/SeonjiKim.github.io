@@ -1,0 +1,44 @@
+id: "subspace-allocation"
+title: "Spatial Affordance-aware Interactable Subspace Allocation for Mixed Reality Telepresence"
+authors:
+  - "Dooyoung Kim"
+  - "Seonji Kim"
+  - "Selin Choi"
+  - "Woontack Woo"
+year: 2024
+venue: "IEEE ISMAR, 2024"
+abstract: "This work presents spatial-affordance-aware allocation of interactable subspaces for mixed reality telepresence. It identifies usable regions in each environment and maps interaction spaces to support collaboration despite layout differences."
+doi: ""
+record: "https://dblp.org/rec/conf/ismar/KimKCW24"
+
+main_figure: ""
+figure_caption: ""
+
+visual_type: spaces
+
+bibtex: |
+  @inproceedings{DBLP:conf/ismar/KimKCW24,
+    author       = {Dooyoung Kim and
+                    Seonji Kim and
+                    Selin Choi and
+                    Woontack Woo},
+    editor       = {Ulrich Eck and
+                    Misha Sra and
+                    Jeanine K. Stefanucci and
+                    Maki Sugimoto and
+                    Markus Tatzgern and
+                    Ian Williams},
+    title        = {Spatial Affordance-aware Interactable Subspace Allocation for Mixed
+                    Reality Telepresence},
+    booktitle    = {{IEEE} International Symposium on Mixed and Augmented Reality, {ISMAR}
+                    2024, Bellevue, WA, USA, October 21-25, 2024},
+    pages        = {1256--1265},
+    publisher    = {{IEEE}},
+    year         = {2024},
+    url          = {https://doi.org/10.1109/ISMAR62088.2024.00142},
+    doi          = {10.1109/ISMAR62088.2024.00142},
+    timestamp    = {Fri, 05 Jun 2026 19:41:29 +0200},
+    biburl       = {https://dblp.org/rec/conf/ismar/KimKCW24.bib},
+    bibsource    = {dblp computer science bibliography, https://dblp.org}
+  }
+bibtex_type: inproceedings

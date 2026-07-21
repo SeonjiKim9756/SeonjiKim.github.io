@@ -1,0 +1,40 @@
+id: "task-breakpoint"
+title: "Task Breakpoint Generation using Origin-Centric Graph in Virtual Reality Recordings for Adaptive Playback"
+authors:
+  - "Selin Choi"
+  - "Dooyoung Kim"
+  - "Taewook Ha"
+  - "Seonji Kim"
+  - "Woontack Woo"
+year: 2026
+venue: "IEEE TVCG 32(5), 2026"
+abstract: "This paper investigates how task breakpoints can be generated from origin-centric graph representations of VR recordings. The resulting structure supports adaptive playback by identifying meaningful boundaries in recorded task sequences."
+doi: ""
+record: "https://dblp.org/rec/journals/tvcg/ChoiKHKW26"
+
+main_figure: ""
+figure_caption: ""
+
+visual_type: graph
+
+bibtex: |
+  @article{DBLP:journals/tvcg/ChoiKHKW26,
+    author       = {Selin Choi and
+                    Dooyoung Kim and
+                    Taewook Ha and
+                    Seonji Kim and
+                    Woontack Woo},
+    title        = {Task Breakpoint Generation using Origin-Centric Graph in Virtual Reality
+                    Recordings for Adaptive Playback},
+    journal      = {{IEEE} Trans. Vis. Comput. Graph.},
+    volume       = {32},
+    number       = {5},
+    pages        = {3283--3292},
+    year         = {2026},
+    url          = {https://doi.org/10.1109/TVCG.2026.3679910},
+    doi          = {10.1109/TVCG.2026.3679910},
+    timestamp    = {Fri, 05 Jun 2026 19:41:28 +0200},
+    biburl       = {https://dblp.org/rec/journals/tvcg/ChoiKHKW26.bib},
+    bibsource    = {dblp computer science bibliography, https://dblp.org}
+  }
+bibtex_type: inproceedings

@@ -1,0 +1,40 @@
+id: "human-scene"
+title: "Human-Scene Interaction Data Generation with Virtual Environment using User-Centric Scene Graph"
+authors:
+  - "Taewook Ha"
+  - "Selin Choi"
+  - "Seonji Kim"
+  - "Dooyoung Kim"
+  - "Woontack Woo"
+year: 2025
+venue: "IEEE VR Workshops, 2025"
+abstract: "This paper proposes generating human-scene interaction data in a virtual environment through a user-centric scene graph."
+doi: ""
+record: "https://dblp.org/rec/conf/vr/HaCKKW25"
+
+main_figure: ""
+figure_caption: ""
+
+visual_type: graph
+
+bibtex: |
+  @inproceedings{DBLP:conf/vr/HaCKKW25,
+    author       = {Taewook Ha and
+                    Selin Choi and
+                    Seonji Kim and
+                    Dooyoung Kim and
+                    Woontack Woo},
+    title        = {Human-Scene Interaction Data Generation with Virtual Environment using
+                    User-Centric Scene Graph},
+    booktitle    = {{IEEE} Conference on Virtual Reality and 3D User Interfaces, {VR}
+                    2025 - Abstracts and Workshops, Saint Malo, France, March 8-12, 2025},
+    pages        = {1422--1423},
+    publisher    = {{IEEE}},
+    year         = {2025},
+    url          = {https://doi.org/10.1109/VRW66409.2025.00357},
+    doi          = {10.1109/VRW66409.2025.00357},
+    timestamp    = {Fri, 05 Jun 2026 19:41:29 +0200},
+    biburl       = {https://dblp.org/rec/conf/vr/HaCKKW25.bib},
+    bibsource    = {dblp computer science bibliography, https://dblp.org}
+  }
+bibtex_type: inproceedings

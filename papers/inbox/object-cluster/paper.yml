@@ -1,0 +1,38 @@
+id: "object-cluster"
+title: "Object Cluster Registration of Dissimilar Rooms Using Geometric Spatial Affordance Graph to Generate Shared Virtual Spaces"
+authors:
+  - "Seonji Kim"
+  - "Dooyoung Kim"
+  - "Jae-eun Shin"
+  - "Woontack Woo"
+year: 2024
+venue: "IEEE VR, 2024"
+abstract: "This paper introduces object-cluster registration for dissimilar rooms using a geometric spatial affordance graph. By matching task-relevant object relationships, the method supports the generation of shared virtual spaces across different physical layouts."
+doi: ""
+record: "https://dblp.org/rec/conf/vr/KimKSW24"
+
+main_figure: ""
+figure_caption: ""
+
+visual_type: spaces
+
+bibtex: |
+  @inproceedings{DBLP:conf/vr/KimKSW24,
+    author       = {Seonji Kim and
+                    Dooyoung Kim and
+                    Jae{-}eun Shin and
+                    Woontack Woo},
+    title        = {Object Cluster Registration of Dissimilar Rooms Using Geometric Spatial
+                    Affordance Graph to Generate Shared Virtual Spaces},
+    booktitle    = {{IEEE} Conference Virtual Reality and 3D User Interfaces, {VR} 2024,
+                    Orlando, FL, USA, March 16-21, 2024},
+    pages        = {796--805},
+    publisher    = {{IEEE}},
+    year         = {2024},
+    url          = {https://doi.org/10.1109/VR58804.2024.00099},
+    doi          = {10.1109/VR58804.2024.00099},
+    timestamp    = {Fri, 05 Jun 2026 19:41:29 +0200},
+    biburl       = {https://dblp.org/rec/conf/vr/KimKSW24.bib},
+    bibsource    = {dblp computer science bibliography, https://dblp.org}
+  }
+bibtex_type: inproceedings

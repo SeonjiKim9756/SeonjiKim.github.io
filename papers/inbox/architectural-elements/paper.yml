@@ -1,0 +1,46 @@
+id: "architectural-elements"
+title: "Architectural Elements Augmentation from 2D Artworks for Spatial Experience of AR Exhibition"
+authors:
+  - "Young Bin Kim"
+  - "Suji Kang"
+  - "Minju Baeck"
+  - "Seonji Kim"
+  - "Woontack Woo"
+year: 2025
+venue: "IEEE ISMAR Adjunct, 2025"
+abstract: "This project explores how architectural elements inferred from two-dimensional artworks can be augmented to create a spatial AR exhibition experience."
+doi: ""
+record: "https://dblp.org/rec/conf/ismar/KimKBKW25"
+
+main_figure: ""
+figure_caption: ""
+
+visual_type: environment
+
+bibtex: |
+  @inproceedings{DBLP:conf/ismar/KimKBKW25,
+    author       = {Young Bin Kim and
+                    Suji Kang and
+                    Minju Baeck and
+                    Seonji Kim and
+                    Woontack Woo},
+    editor       = {Ulrich Eck and
+                    Gun Lee and
+                    Alexander Plopski and
+                    Missie Smith and
+                    Qi Sun and
+                    Markus Tatzgern},
+    title        = {Architectural Elements Augmentation from 2D Artworks for Spatial Experience
+                    of {AR} Exhibition},
+    booktitle    = {{IEEE} International Symposium on Mixed and Augmented Reality, {ISMAR}
+                    2025 - Adjunct, Daejeon, Republic of Korea, October 8-12, 2025},
+    pages        = {861--862},
+    publisher    = {{IEEE}},
+    year         = {2025},
+    url          = {https://doi.org/10.1109/ISMAR-Adjunct68609.2025.00227},
+    doi          = {10.1109/ISMAR-ADJUNCT68609.2025.00227},
+    timestamp    = {Thu, 01 Jan 2026 09:51:47 +0100},
+    biburl       = {https://dblp.org/rec/conf/ismar/KimKBKW25.bib},
+    bibsource    = {dblp computer science bibliography, https://dblp.org}
+  }
+bibtex_type: inproceedings

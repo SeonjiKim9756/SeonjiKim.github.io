@@ -1,0 +1,44 @@
+id: "meta-objects"
+title: "Meta-Objects: Interactive and Multisensory Virtual Objects Learned From the Real World for Use in Augmented Reality"
+authors:
+  - "Dooyoung Kim"
+  - "Taewook Ha"
+  - "Jinseok Hong"
+  - "Seonji Kim"
+  - "Selin Choi"
+  - "Heejeong Ko"
+  - "Woontack Woo"
+year: 2025
+venue: "IEEE Computer Graphics and Applications 45(3), 2025"
+abstract: "Meta-Objects introduces interactive and multisensory virtual objects learned from real-world examples for augmented reality. The work examines how captured object properties can support richer behavior and perception in spatial experiences."
+doi: ""
+record: "https://dblp.org/rec/journals/cga/KimHHKCKW25"
+
+main_figure: ""
+figure_caption: ""
+
+visual_type: object
+
+bibtex: |
+  @article{DBLP:journals/cga/KimHHKCKW25,
+    author       = {Dooyoung Kim and
+                    Taewook Ha and
+                    Jinseok Hong and
+                    Seonji Kim and
+                    Selin Choi and
+                    Heejeong Ko and
+                    Woontack Woo},
+    title        = {Meta-Objects: Interactive and Multisensory Virtual Objects Learned
+                    From the Real World for Use in Augmented Reality},
+    journal      = {{IEEE} Computer Graphics and Applications},
+    volume       = {45},
+    number       = {3},
+    pages        = {134--143},
+    year         = {2025},
+    url          = {https://doi.org/10.1109/MCG.2025.3555901},
+    doi          = {10.1109/MCG.2025.3555901},
+    timestamp    = {Fri, 05 Jun 2026 19:41:28 +0200},
+    biburl       = {https://dblp.org/rec/journals/cga/KimHHKCKW25.bib},
+    bibsource    = {dblp computer science bibliography, https://dblp.org}
+  }
+bibtex_type: inproceedings

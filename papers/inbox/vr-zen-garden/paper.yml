@@ -1,0 +1,42 @@
+id: "vr-zen-garden"
+title: "VR Zen Garden: Designing a Virtual Environment for Stress Relief"
+authors:
+  - "Hail Song"
+  - "Jinseok Hong"
+  - "Seonji Kim"
+  - "Kyung Taek Oh"
+  - "Woontack Woo"
+  - "Sungyoung Kim"
+year: 2026
+venue: "IEEE VR Workshops, 2026"
+abstract: "VR Zen Garden explores the design of a calm virtual environment intended to support stress relief. The project combines spatial composition and restorative interaction cues in an immersive setting."
+doi: ""
+record: "https://dblp.org/rec/conf/vr/SongHKOWK26"
+
+main_figure: ""
+figure_caption: ""
+
+visual_type: environment
+
+bibtex: |
+  @inproceedings{DBLP:conf/vr/SongHKOWK26,
+    author       = {Hail Song and
+                    Jinseok Hong and
+                    Seonji Kim and
+                    Kyung Taek Oh and
+                    Woontack Woo and
+                    Sungyoung Kim},
+    title        = {{VR} Zen Garden: Designing a Virtual Environment for Stress Relief},
+    booktitle    = {{IEEE} Conference on Virtual Reality and 3D User Interfaces, {VR}
+                    2026 - Abstracts and Workshops, Daegu, Republic of Korea, March 21-25,
+                    2026},
+    pages        = {1383--1384},
+    publisher    = {{IEEE}},
+    year         = {2026},
+    url          = {https://doi.org/10.1109/VRW70859.2026.00366},
+    doi          = {10.1109/VRW70859.2026.00366},
+    timestamp    = {Wed, 13 May 2026 10:27:30 +0200},
+    biburl       = {https://dblp.org/rec/conf/vr/SongHKOWK26.bib},
+    bibsource    = {dblp computer science bibliography, https://dblp.org}
+  }
+bibtex_type: inproceedings

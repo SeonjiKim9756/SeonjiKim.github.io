@@ -1,0 +1,36 @@
+id: "translider"
+title: "TranSlider: User-Controlled Augmented Content Presence Visualization in AR Collaboration"
+authors:
+  - "Boram Yoon"
+  - "Seonji Kim"
+  - "Woontack Woo"
+year: 2022
+venue: "IEEE ISMAR Adjunct, 2022"
+abstract: "TranSlider explores a user-controlled visualization for expressing the presence of augmented content in AR collaboration."
+doi: ""
+record: "https://dblp.org/rec/conf/ismar/YoonKW22"
+
+main_figure: ""
+figure_caption: ""
+
+visual_type: collaboration
+
+bibtex: |
+  @inproceedings{DBLP:conf/ismar/YoonKW22,
+    author       = {Boram Yoon and
+                    Seonji Kim and
+                    Woontack Woo},
+    title        = {TranSlider: User-Controlled Augmented Content Presence Visualization
+                    in {AR} Collaboration},
+    booktitle    = {2022 {IEEE} International Symposium on Mixed and Augmented Reality
+                    Adjunct (ISMAR-Adjunct), Singapore, Singapore, October 17-21, 2022},
+    pages        = {714--717},
+    publisher    = {{IEEE}},
+    year         = {2022},
+    url          = {https://doi.org/10.1109/ISMAR-Adjunct57072.2022.00150},
+    doi          = {10.1109/ISMAR-ADJUNCT57072.2022.00150},
+    timestamp    = {Mon, 26 Jun 2023 20:44:01 +0200},
+    biburl       = {https://dblp.org/rec/conf/ismar/YoonKW22.bib},
+    bibsource    = {dblp computer science bibliography, https://dblp.org}
+  }
+bibtex_type: inproceedings

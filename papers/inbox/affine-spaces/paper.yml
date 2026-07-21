@@ -1,0 +1,38 @@
+id: "affine-spaces"
+title: "Spatial Affordance-Aware Affine Transformation Between Heterogeneous Spaces for Mixed Reality Remote Collaboration"
+authors:
+  - "Seonji Kim"
+  - "Dooyoung Kim"
+  - "Selin Choi"
+  - "Woontack Woo"
+year: 2026
+venue: "IEEE TVCG 32(5), 2026"
+abstract: "This work presents a spatial-affordance-aware transformation approach for aligning heterogeneous physical environments in mixed reality remote collaboration. The method focuses on preserving task-relevant spatial relationships while adapting shared content and interaction across dissimilar rooms."
+doi: ""
+record: "https://dblp.org/rec/journals/tvcg/KimKCW26"
+
+main_figure: ""
+figure_caption: ""
+
+visual_type: spaces
+
+bibtex: |
+  @article{DBLP:journals/tvcg/KimKCW26,
+    author       = {Seonji Kim and
+                    Dooyoung Kim and
+                    Selin Choi and
+                    Woontack Woo},
+    title        = {Spatial Affordance-Aware Affine Transformation Between Heterogeneous
+                    Spaces for Mixed Reality Remote Collaboration},
+    journal      = {{IEEE} Trans. Vis. Comput. Graph.},
+    volume       = {32},
+    number       = {5},
+    pages        = {3905--3913},
+    year         = {2026},
+    url          = {https://doi.org/10.1109/TVCG.2026.3680606},
+    doi          = {10.1109/TVCG.2026.3680606},
+    timestamp    = {Fri, 05 Jun 2026 19:41:28 +0200},
+    biburl       = {https://dblp.org/rec/journals/tvcg/KimKCW26.bib},
+    bibsource    = {dblp computer science bibliography, https://dblp.org}
+  }
+bibtex_type: inproceedings
