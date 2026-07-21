@@ -19,7 +19,8 @@
       "figureCaption": "",
       "pdf": "https://dblp.org/rec/journals/tvcg/KimKCW26",
       "bibtex": "https://dblp.org/rec/journals/tvcg/KimKCW26.bib",
-      "record": "https://dblp.org/rec/journals/tvcg/KimKCW26"
+      "record": "https://dblp.org/rec/journals/tvcg/KimKCW26",
+      "bibtexText": "@article{DBLP:journals/tvcg/KimKCW26,\n  author       = {Seonji Kim and\n                  Dooyoung Kim and\n                  Selin Choi and\n                  Woontack Woo},\n  title        = {Spatial Affordance-Aware Affine Transformation Between Heterogeneous\n                  Spaces for Mixed Reality Remote Collaboration},\n  journal      = {{IEEE} Trans. Vis. Comput. Graph.},\n  volume       = {32},\n  number       = {5},\n  pages        = {3905--3913},\n  year         = {2026},\n  url          = {https://doi.org/10.1109/TVCG.2026.3680606},\n  doi          = {10.1109/TVCG.2026.3680606},\n  timestamp    = {Fri, 05 Jun 2026 19:41:28 +0200},\n  biburl       = {https://dblp.org/rec/journals/tvcg/KimKCW26.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
     },
     {
       "id": "task-breakpoint",
@@ -40,7 +41,8 @@
       "figureCaption": "Automatically extracted figure candidate. Review before publishing.",
       "pdf": "papers/inbox/task-breakpoint/paper.pdf",
       "bibtex": "assets/papers/task-breakpoint/citation.bib",
-      "record": "https://dblp.org/rec/journals/tvcg/ChoiKHKW26"
+      "record": "https://dblp.org/rec/journals/tvcg/ChoiKHKW26",
+      "bibtexText": "@article{DBLP:journals/tvcg/ChoiKHKW26,\n  author       = {Selin Choi and\n                  Dooyoung Kim and\n                  Taewook Ha and\n                  Seonji Kim and\n                  Woontack Woo},\n  title        = {Task Breakpoint Generation using Origin-Centric Graph in Virtual Reality\n                  Recordings for Adaptive Playback},\n  journal      = {{IEEE} Trans. Vis. Comput. Graph.},\n  volume       = {32},\n  number       = {5},\n  pages        = {3283--3292},\n  year         = {2026},\n  url          = {https://doi.org/10.1109/TVCG.2026.3679910},\n  doi          = {10.1109/TVCG.2026.3679910},\n  timestamp    = {Fri, 05 Jun 2026 19:41:28 +0200},\n  biburl       = {https://dblp.org/rec/journals/tvcg/ChoiKHKW26.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
     },
     {
       "id": "vr-zen-garden",
@@ -62,7 +64,8 @@
       "figureCaption": "",
       "pdf": "https://dblp.org/rec/conf/vr/SongHKOWK26",
       "bibtex": "https://dblp.org/rec/conf/vr/SongHKOWK26.bib",
-      "record": "https://dblp.org/rec/conf/vr/SongHKOWK26"
+      "record": "https://dblp.org/rec/conf/vr/SongHKOWK26",
+      "bibtexText": "@inproceedings{DBLP:conf/vr/SongHKOWK26,\n  author       = {Hail Song and\n                  Jinseok Hong and\n                  Seonji Kim and\n                  Kyung Taek Oh and\n                  Woontack Woo and\n                  Sungyoung Kim},\n  title        = {{VR} Zen Garden: Designing a Virtual Environment for Stress Relief},\n  booktitle    = {{IEEE} Conference on Virtual Reality and 3D User Interfaces, {VR}\n                  2026 - Abstracts and Workshops, Daegu, Republic of Korea, March 21-25,\n                  2026},\n  pages        = {1383--1384},\n  publisher    = {{IEEE}},\n  year         = {2026},\n  url          = {https://doi.org/10.1109/VRW70859.2026.00366},\n  doi          = {10.1109/VRW70859.2026.00366},\n  timestamp    = {Wed, 13 May 2026 10:27:30 +0200},\n  biburl       = {https://dblp.org/rec/conf/vr/SongHKOWK26.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
     },
     {
       "id": "architectural-elements",
@@ -83,7 +86,8 @@
       "figureCaption": "",
       "pdf": "https://dblp.org/rec/conf/ismar/KimKBKW25",
       "bibtex": "https://dblp.org/rec/conf/ismar/KimKBKW25.bib",
-      "record": "https://dblp.org/rec/conf/ismar/KimKBKW25"
+      "record": "https://dblp.org/rec/conf/ismar/KimKBKW25",
+      "bibtexText": "@inproceedings{DBLP:conf/ismar/KimKBKW25,\n  author       = {Young Bin Kim and\n                  Suji Kang and\n                  Minju Baeck and\n                  Seonji Kim and\n                  Woontack Woo},\n  editor       = {Ulrich Eck and\n                  Gun Lee and\n                  Alexander Plopski and\n                  Missie Smith and\n                  Qi Sun and\n                  Markus Tatzgern},\n  title        = {Architectural Elements Augmentation from 2D Artworks for Spatial Experience\n                  of {AR} Exhibition},\n  booktitle    = {{IEEE} International Symposium on Mixed and Augmented Reality, {ISMAR}\n                  2025 - Adjunct, Daejeon, Republic of Korea, October 8-12, 2025},\n  pages        = {861--862},\n  publisher    = {{IEEE}},\n  year         = {2025},\n  url          = {https://doi.org/10.1109/ISMAR-Adjunct68609.2025.00227},\n  doi          = {10.1109/ISMAR-ADJUNCT68609.2025.00227},\n  timestamp    = {Thu, 01 Jan 2026 09:51:47 +0100},\n  biburl       = {https://dblp.org/rec/conf/ismar/KimKBKW25.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
     },
     {
       "id": "human-scene",
@@ -104,7 +108,8 @@
       "figureCaption": "",
       "pdf": "https://dblp.org/rec/conf/vr/HaCKKW25",
       "bibtex": "https://dblp.org/rec/conf/vr/HaCKKW25.bib",
-      "record": "https://dblp.org/rec/conf/vr/HaCKKW25"
+      "record": "https://dblp.org/rec/conf/vr/HaCKKW25",
+      "bibtexText": "@inproceedings{DBLP:conf/vr/HaCKKW25,\n  author       = {Taewook Ha and\n                  Selin Choi and\n                  Seonji Kim and\n                  Dooyoung Kim and\n                  Woontack Woo},\n  title        = {Human-Scene Interaction Data Generation with Virtual Environment using\n                  User-Centric Scene Graph},\n  booktitle    = {{IEEE} Conference on Virtual Reality and 3D User Interfaces, {VR}\n                  2025 - Abstracts and Workshops, Saint Malo, France, March 8-12, 2025},\n  pages        = {1422--1423},\n  publisher    = {{IEEE}},\n  year         = {2025},\n  url          = {https://doi.org/10.1109/VRW66409.2025.00357},\n  doi          = {10.1109/VRW66409.2025.00357},\n  timestamp    = {Fri, 05 Jun 2026 19:41:29 +0200},\n  biburl       = {https://dblp.org/rec/conf/vr/HaCKKW25.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
     },
     {
       "id": "meta-objects",
@@ -127,7 +132,8 @@
       "figureCaption": "Automatically extracted figure candidate. Review before publishing.",
       "pdf": "papers/inbox/meta-objects/paper.pdf",
       "bibtex": "assets/papers/meta-objects/citation.bib",
-      "record": "https://dblp.org/rec/journals/cga/KimHHKCKW25"
+      "record": "https://dblp.org/rec/journals/cga/KimHHKCKW25",
+      "bibtexText": "@article{DBLP:journals/cga/KimHHKCKW25,\n  author       = {Dooyoung Kim and\n                  Taewook Ha and\n                  Jinseok Hong and\n                  Seonji Kim and\n                  Selin Choi and\n                  Heejeong Ko and\n                  Woontack Woo},\n  title        = {Meta-Objects: Interactive and Multisensory Virtual Objects Learned\n                  From the Real World for Use in Augmented Reality},\n  journal      = {{IEEE} Computer Graphics and Applications},\n  volume       = {45},\n  number       = {3},\n  pages        = {134--143},\n  year         = {2025},\n  url          = {https://doi.org/10.1109/MCG.2025.3555901},\n  doi          = {10.1109/MCG.2025.3555901},\n  timestamp    = {Fri, 05 Jun 2026 19:41:28 +0200},\n  biburl       = {https://dblp.org/rec/journals/cga/KimHHKCKW25.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
     },
     {
       "id": "mutual-space",
@@ -145,7 +151,8 @@
       "figureCaption": "",
       "pdf": "https://dblp.org/rec/conf/ismar/KimW25a",
       "bibtex": "https://dblp.org/rec/conf/ismar/KimW25a.bib",
-      "record": "https://dblp.org/rec/conf/ismar/KimW25a"
+      "record": "https://dblp.org/rec/conf/ismar/KimW25a",
+      "bibtexText": "@inproceedings{DBLP:conf/ismar/KimW25a,\n  author       = {Seonji Kim and\n                  Woontack Woo},\n  editor       = {Ulrich Eck and\n                  Gun Lee and\n                  Alexander Plopski and\n                  Missie Smith and\n                  Qi Sun and\n                  Markus Tatzgern},\n  title        = {Mutual Space Representation Standardization for Mixed and Augmented\n                  Reality Remote Collaboration},\n  booktitle    = {{IEEE} International Symposium on Mixed and Augmented Reality, {ISMAR}\n                  2025 - Adjunct, Daejeon, Republic of Korea, October 8-12, 2025},\n  pages        = {501--504},\n  publisher    = {{IEEE}},\n  year         = {2025},\n  url          = {https://doi.org/10.1109/ISMAR-Adjunct68609.2025.00101},\n  doi          = {10.1109/ISMAR-ADJUNCT68609.2025.00101},\n  timestamp    = {Thu, 01 Jan 2026 09:51:47 +0100},\n  biburl       = {https://dblp.org/rec/conf/ismar/KimW25a.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
     },
     {
       "id": "object-cluster",
@@ -165,7 +172,8 @@
       "figureCaption": "",
       "pdf": "https://dblp.org/rec/conf/vr/KimKSW24",
       "bibtex": "https://dblp.org/rec/conf/vr/KimKSW24.bib",
-      "record": "https://dblp.org/rec/conf/vr/KimKSW24"
+      "record": "https://dblp.org/rec/conf/vr/KimKSW24",
+      "bibtexText": "@inproceedings{DBLP:conf/vr/KimKSW24,\n  author       = {Seonji Kim and\n                  Dooyoung Kim and\n                  Jae{-}eun Shin and\n                  Woontack Woo},\n  title        = {Object Cluster Registration of Dissimilar Rooms Using Geometric Spatial\n                  Affordance Graph to Generate Shared Virtual Spaces},\n  booktitle    = {{IEEE} Conference Virtual Reality and 3D User Interfaces, {VR} 2024,\n                  Orlando, FL, USA, March 16-21, 2024},\n  pages        = {796--805},\n  publisher    = {{IEEE}},\n  year         = {2024},\n  url          = {https://doi.org/10.1109/VR58804.2024.00099},\n  doi          = {10.1109/VR58804.2024.00099},\n  timestamp    = {Fri, 05 Jun 2026 19:41:29 +0200},\n  biburl       = {https://dblp.org/rec/conf/vr/KimKSW24.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
     },
     {
       "id": "subspace-allocation",
@@ -185,7 +193,8 @@
       "figureCaption": "Automatically extracted figure candidate. Review before publishing.",
       "pdf": "papers/inbox/subspace-allocation/paper.pdf",
       "bibtex": "assets/papers/subspace-allocation/citation.bib",
-      "record": "https://dblp.org/rec/conf/ismar/KimKCW24"
+      "record": "https://dblp.org/rec/conf/ismar/KimKCW24",
+      "bibtexText": "@inproceedings{DBLP:conf/ismar/KimKCW24,\n  author       = {Dooyoung Kim and\n                  Seonji Kim and\n                  Selin Choi and\n                  Woontack Woo},\n  editor       = {Ulrich Eck and\n                  Misha Sra and\n                  Jeanine K. Stefanucci and\n                  Maki Sugimoto and\n                  Markus Tatzgern and\n                  Ian Williams},\n  title        = {Spatial Affordance-aware Interactable Subspace Allocation for Mixed\n                  Reality Telepresence},\n  booktitle    = {{IEEE} International Symposium on Mixed and Augmented Reality, {ISMAR}\n                  2024, Bellevue, WA, USA, October 21-25, 2024},\n  pages        = {1256--1265},\n  publisher    = {{IEEE}},\n  year         = {2024},\n  url          = {https://doi.org/10.1109/ISMAR62088.2024.00142},\n  doi          = {10.1109/ISMAR62088.2024.00142},\n  timestamp    = {Fri, 05 Jun 2026 19:41:29 +0200},\n  biburl       = {https://dblp.org/rec/conf/ismar/KimKCW24.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
     },
     {
       "id": "translation-gain",
@@ -208,7 +217,8 @@
       "figureCaption": "Automatically extracted figure candidate. Review before publishing.",
       "pdf": "papers/inbox/translation-gain/paper.pdf",
       "bibtex": "assets/papers/translation-gain/citation.bib",
-      "record": "https://dblp.org/rec/journals/vr/KimKSYKLW23"
+      "record": "https://dblp.org/rec/journals/vr/KimKSYKLW23",
+      "bibtexText": "@article{DBLP:journals/vr/KimKSYKLW23,\n  author       = {Dooyoung Kim and\n                  Seonji Kim and\n                  Jae{-}eun Shin and\n                  Boram Yoon and\n                  Jinwook Kim and\n                  Jeongmi Lee and\n                  Woontack Woo},\n  title        = {The effects of spatial configuration on relative translation gain\n                  thresholds in redirected walking},\n  journal      = {Virtual Real.},\n  volume       = {27},\n  number       = {2},\n  pages        = {1233--1250},\n  year         = {2023},\n  url          = {https://doi.org/10.1007/s10055-022-00734-3},\n  doi          = {10.1007/S10055-022-00734-3},\n  timestamp    = {Fri, 05 Jun 2026 19:41:28 +0200},\n  biburl       = {https://dblp.org/rec/journals/vr/KimKSYKLW23.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
     },
     {
       "id": "bring-store",
@@ -233,7 +243,8 @@
       "figureCaption": "",
       "pdf": "https://dblp.org/rec/conf/ismar/KimJOOKWLAY22",
       "bibtex": "https://dblp.org/rec/conf/ismar/KimJOOKWLAY22.bib",
-      "record": "https://dblp.org/rec/conf/ismar/KimJOOKWLAY22"
+      "record": "https://dblp.org/rec/conf/ismar/KimJOOKWLAY22",
+      "bibtexText": ""
     },
     {
       "id": "translider",
@@ -252,7 +263,8 @@
       "figureCaption": "",
       "pdf": "https://dblp.org/rec/conf/ismar/YoonKW22",
       "bibtex": "https://dblp.org/rec/conf/ismar/YoonKW22.bib",
-      "record": "https://dblp.org/rec/conf/ismar/YoonKW22"
+      "record": "https://dblp.org/rec/conf/ismar/YoonKW22",
+      "bibtexText": ""
     }
   ]
 }
