@@ -1,0 +1,83 @@
+{
+  "name": "Seonji Kim",
+  "nameLines": ["Seonji", "Kim"],
+  "heroMeta": ["Ph.D. Student", "KAIST"],
+  "statement": "Designing **shared spatial experiences** that connect people, tasks, and heterogeneous physical environments.",
+  "about": "I am a **Ph.D. student** in the **Graduate School of Culture Technology at KAIST** and a member of the **Ubiquitous Virtual Reality Lab**, advised by **Prof. Woontack Woo**. My work explores how **augmented reality** and **spatial computing** can support collaboration across different physical environments.",
+  "socialLinks": [
+    {
+      "label": "Email",
+      "href": "mailto:seonji.kim@kaist.ac.kr",
+      "icon": "email"
+    },
+    {
+      "label": "Google Scholar",
+      "href": "https://scholar.google.com/citations?user=dSh0LHkAAAAJ&hl=en",
+      "icon": "scholar"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/seonjikim",
+      "icon": "linkedin"
+    }
+  ],
+  "interests": [
+    "Augmented Reality",
+    "Ubiquitous Virtual Reality",
+    "Remote Collaboration",
+    "Spatial Computing"
+  ],
+  "research": [
+    {
+      "period": "2024–Present",
+      "title": "Meta-Object",
+      "summary": "Real-time XR Interface Technology Development for Environmental Adaptation",
+      "meta": "Intelligent Platform Team · IITP, Ministry of Science and ICT"
+    },
+    {
+      "period": "2021–2025",
+      "title": "OpenXR: TranSpace 3.0",
+      "summary": "Development of Untact Realistic OpenXR Platform Technology",
+      "meta": "Real-World Digital Twin Generation and Management Team"
+    }
+  ],
+  "education": [
+    {
+      "period": "2023–Present",
+      "title": "Ph.D. Student · KAIST",
+      "summary": "Graduate School of Culture Technology"
+    },
+    {
+      "period": "2021–2023",
+      "title": "M.S. · KAIST",
+      "summary": "Graduate School of Culture Technology"
+    },
+    {
+      "period": "2016–2021",
+      "title": "B.S. · Sungkyunkwan University",
+      "summary": "Computer Science and Engineering"
+    }
+  ],
+  "teaching": [
+    {
+      "code": "GCT445",
+      "title": "Augmented Reality",
+      "summary": "Teaching Assistant · Summer 2025"
+    },
+    {
+      "code": "GCT600",
+      "title": "Augmented Reality Project",
+      "summary": "Teaching Assistant · Fall 2024"
+    },
+    {
+      "code": "GCT555",
+      "title": "3D Interaction Design",
+      "summary": "Teaching Assistant · Spring 2024"
+    },
+    {
+      "code": "GCT600",
+      "title": "Augmented Reality Project",
+      "summary": "Teaching Assistant · Fall 2023"
+    }
+  ]
+}
