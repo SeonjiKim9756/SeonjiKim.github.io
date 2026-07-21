@@ -12,6 +12,7 @@
   const educationTimeline = document.getElementById("education-timeline");
   const teachingGrid = document.getElementById("teaching-grid");
   const socialLinks = document.getElementById("social-links");
+  const siteStamp = document.getElementById("site-stamp");
   const bibtexCopyButton = document.getElementById("paper-bibtex-copy");
   const bibtexText = document.getElementById("paper-bibtex-text");
   let papers = [];
@@ -73,15 +74,10 @@
         heroMeta.appendChild(divider);
       }
     });
-    const updated = document.createElement("span");
-    updated.id = "last-updated";
-    updated.textContent = "Last updated July 2026";
-    heroMeta.appendChild(document.createElement("span")).textContent = "·";
-    heroMeta.appendChild(updated);
 
     heroName.innerHTML = (data.nameLines || []).map(escapeHTML).join("<br>");
-    heroStatement.innerHTML = emphasisHTML(data.statement || "");
-    aboutCopy.innerHTML = emphasisHTML(data.about || "");
+    heroStatement.innerHTML = data.statementHtml || emphasisHTML(data.statement || "");
+    aboutCopy.innerHTML = data.aboutHtml || emphasisHTML(data.about || "");
 
     interestList.innerHTML = "";
     (data.interests || []).forEach(interest => {
@@ -191,15 +187,28 @@
     document.getElementById("figure-caption").textContent = paper.figureCaption || (paperFigurePath(paper) ? "" : "Main figure is not cached yet for this publication.");
 
     showPanel("paper");
-    if (updateHash) history.replaceState(null, "", `#paper/${paper.id}`);
+    if (updateHash) history.pushState(null, "", `#paper/${paper.id}`);
+  }
+
+  function syncFromHash() {
+    const initial = location.hash.replace(/^#/, "");
+    if (initial.startsWith("paper/")) {
+      openPaper(initial.split("/")[1], false);
+      return;
+    }
+    if (["about", "publications", "research", "education", "teaching"].includes(initial)) {
+      showPanel(initial);
+      return;
+    }
+    showPanel("about");
   }
 
   document.addEventListener("click", async event => {
     const tab = event.target.closest("[data-tab]");
     if (tab) {
       event.preventDefault();
-      showPanel(tab.dataset.tab);
-      history.replaceState(null, "", `#${tab.dataset.tab}`);
+      history.pushState(null, "", `#${tab.dataset.tab}`);
+      syncFromHash();
       return;
     }
 
@@ -212,8 +221,8 @@
 
     if (event.target.closest("[data-paper-back]")) {
       event.preventDefault();
-      showPanel("publications");
-      history.replaceState(null, "", "#publications");
+      history.pushState(null, "", "#publications");
+      syncFromHash();
       return;
     }
 
@@ -247,15 +256,12 @@
       renderProfile(profileData);
       papers = publicationData.publications || [];
       renderPublications();
-      if (publicationData.lastUpdated) {
-        const updated = document.getElementById("last-updated");
-        if (updated) updated.textContent = `Last updated ${publicationData.lastUpdated}`;
-      }
-      const initial = location.hash.replace(/^#/, "");
-      if (initial.startsWith("paper/")) openPaper(initial.split("/")[1], false);
-      else if (["about", "publications", "research", "education", "teaching"].includes(initial)) showPanel(initial);
+      if (publicationData.lastUpdated && siteStamp) siteStamp.textContent = `Last updated ${publicationData.lastUpdated}`;
+      syncFromHash();
     })
     .catch(error => {
       list.innerHTML = `<p class="notice">Site data could not be loaded. Open this site through a web server or GitHub Pages, not by double-clicking index.html.<br><small>${escapeHTML(error.message)}</small></p>`;
     });
+
+  window.addEventListener("popstate", syncFromHash);
 })();
