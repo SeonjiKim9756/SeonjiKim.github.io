@@ -1,0 +1,25 @@
+# Duplicate this folder, rename it with a short paper slug, and add paper.pdf.
+# Every field may be left blank for automatic extraction, but review the result.
+
+id: ""
+title: ""
+authors: []
+year:
+venue: ""
+abstract: ""
+doi: ""
+record: ""
+
+# Optional local image filename placed beside paper.pdf.
+# Leave blank to extract the largest figure candidate from the first six pages.
+main_figure: ""
+figure_caption: ""
+
+# Fallback illustration used when no figure is found:
+# spaces | graph | environment | walking | object | collaboration
+visual_type: spaces
+
+# Optional Scholar/DBLP/publisher BibTeX. Paste it as a YAML block to preserve it exactly.
+bibtex: |
+  
+bibtex_type: inproceedings
