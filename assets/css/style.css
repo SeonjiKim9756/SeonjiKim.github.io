@@ -188,8 +188,8 @@ h1 {
   max-width: 660px;
   margin: 20px 0 0;
   color: var(--muted);
-  font-size: clamp(16px, 2vw, 20px);
-  line-height: 1.45;
+  font-size: clamp(14px, 1.45vw, 17px);
+  line-height: 1.5;
 }
 
 .statement strong,

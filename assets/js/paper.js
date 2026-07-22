@@ -1,5 +1,5 @@
 (() => {
-  const CACHE_BUST = "20260722n";
+  const CACHE_BUST = "20260722o";
   const owner = "Seonji Kim";
   const siteStamp = document.getElementById("site-stamp");
   const bibtexCopyButton = document.getElementById("paper-bibtex-copy");

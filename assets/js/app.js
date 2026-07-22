@@ -1,5 +1,5 @@
 (() => {
-  const CACHE_BUST = "20260722n";
+  const CACHE_BUST = "20260722o";
   const owner = "Seonji Kim";
   const list = document.getElementById("publication-list");
   const heroMeta = document.getElementById("hero-meta");
