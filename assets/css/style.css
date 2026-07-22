@@ -161,9 +161,9 @@ body.paper-page .site-shell {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 560px) 190px;
+  grid-template-columns: minmax(0, 720px) 190px;
   justify-content: space-between;
-  gap: clamp(56px, 8vw, 128px);
+  gap: clamp(40px, 6vw, 96px);
   align-items: start;
 }
 
@@ -196,7 +196,7 @@ h1 {
 }
 
 .statement {
-  max-width: 660px;
+  max-width: 780px;
   margin: 20px 0 0;
   color: var(--muted);
   font-size: clamp(13px, 1.2vw, 15px);
@@ -218,7 +218,7 @@ h1 {
   grid-template-columns: auto minmax(0, 1fr);
   gap: 14px;
   align-items: start;
-  max-width: 760px;
+  max-width: 860px;
   margin-top: 16px;
 }
 
@@ -234,20 +234,20 @@ h1 {
 .hero-interests #interest-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 12px;
+  gap: 6px 10px;
   min-width: 0;
 }
 
 .hero-interests #interest-list > span {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.5;
   white-space: nowrap;
 }
 
 .hero-interests #interest-list > span:not(:last-child)::after {
   content: "·";
-  margin-left: 12px;
+  margin-left: 10px;
   color: color-mix(in srgb, var(--muted) 60%, transparent);
 }
 
