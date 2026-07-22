@@ -1,5 +1,5 @@
 (() => {
-  const CACHE_BUST = "20260722j";
+  const CACHE_BUST = "20260722l";
   const owner = "Seonji Kim";
   const siteStamp = document.getElementById("site-stamp");
   const bibtexCopyButton = document.getElementById("paper-bibtex-copy");
@@ -81,7 +81,7 @@
 
     updateBibtexPanel(paper);
     document.getElementById("paper-figure").innerHTML = visualHTML(paper);
-    document.getElementById("figure-caption").textContent = paper.figureCaption || (paperFigurePath(paper) ? "" : "Conceptual visual generated from the paper's research theme.");
+    document.getElementById("figure-caption").textContent = paper.figureCaption || "";
   }
 
   function renderMissing(message) {
