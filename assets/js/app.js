@@ -1,4 +1,5 @@
 (() => {
+  const CACHE_BUST = "20260722d";
   const owner = "Seonji Kim";
   const list = document.getElementById("publication-list");
   const heroMeta = document.getElementById("hero-meta");
@@ -18,6 +19,7 @@
 
   let papers = [];
 
+  const cacheBusted = path => path ? `${path}${path.includes("?") ? "&" : "?"}v=${CACHE_BUST}` : "";
   const socialIcons = {
     email: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>',
     scholar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 9 9-5 9 5-9 5-9-5Z"/><path d="M7 12v4c3 2 7 2 10 0v-4"/></svg>',
@@ -46,7 +48,7 @@
   function visualHTML(paper) {
     const figurePath = paperFigurePath(paper);
     if (figurePath) {
-      return `<img src="${escapeHTML(figurePath)}" alt="${escapeHTML(`Main figure from ${paper.title}`)}">`;
+      return `<img src="${escapeHTML(cacheBusted(figurePath))}" alt="${escapeHTML(`Main figure from ${paper.title}`)}">`;
     }
     return figurePlaceholderHTML(paper);
   }
@@ -55,6 +57,15 @@
     sectionLinks.forEach(link => {
       link.setAttribute("aria-current", String(link.dataset.sectionLink === sectionId));
     });
+  }
+
+  function splitTitle(value) {
+    const parts = String(value || "").split(" · ");
+    if (parts.length < 2) return null;
+    return {
+      primary: parts[0],
+      secondary: parts.slice(1).join(" · ")
+    };
   }
 
   function renderProfile(data) {
@@ -103,7 +114,11 @@
     educationTimeline.innerHTML = "";
     (data.education || []).forEach(item => {
       const entry = document.createElement("li");
-      entry.innerHTML = `<span>${escapeHTML(item.period)}</span><div><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.summary)}</p></div>`;
+      const titleParts = splitTitle(item.title);
+      const titleHTML = titleParts
+        ? `<h3><span class="entry-title-primary">${escapeHTML(titleParts.primary)}</span><span class="entry-title-affiliation">${escapeHTML(titleParts.secondary)}</span></h3>`
+        : `<h3>${escapeHTML(item.title)}</h3>`;
+      entry.innerHTML = `<span>${escapeHTML(item.period)}</span><div>${titleHTML}<p>${escapeHTML(item.summary)}</p></div>`;
       educationTimeline.appendChild(entry);
     });
 
@@ -171,11 +186,11 @@
   }
 
   Promise.all([
-    fetch("data/profile.json").then(response => {
+    fetch(cacheBusted("data/profile.json")).then(response => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
     }),
-    fetch("data/publications.json").then(response => {
+    fetch(cacheBusted("data/publications.json")).then(response => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
     })

@@ -1,8 +1,10 @@
 (() => {
+  const CACHE_BUST = "20260722d";
   const owner = "Seonji Kim";
   const siteStamp = document.getElementById("site-stamp");
   const bibtexCopyButton = document.getElementById("paper-bibtex-copy");
   const bibtexText = document.getElementById("paper-bibtex-text");
+  const cacheBusted = path => path ? `${path}${path.includes("?") ? "&" : "?"}v=${CACHE_BUST}` : "";
   const escapeHTML = value => String(value ?? "").replace(/[&<>'"]/g, char => ({
     "&": "&amp;",
     "<": "&lt;",
@@ -24,7 +26,7 @@
   function visualHTML(paper) {
     const figurePath = paperFigurePath(paper);
     if (figurePath) {
-      return `<img src="${escapeHTML(figurePath)}" alt="${escapeHTML(`Representative image for ${paper.title}`)}">`;
+      return `<img src="${escapeHTML(cacheBusted(figurePath))}" alt="${escapeHTML(`Representative image for ${paper.title}`)}">`;
     }
     return figurePlaceholderHTML(paper);
   }
@@ -113,7 +115,7 @@
   const params = new URLSearchParams(window.location.search);
   const paperId = params.get("id");
 
-  fetch("data/publications.json")
+  fetch(cacheBusted("data/publications.json"))
     .then(response => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();

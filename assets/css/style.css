@@ -72,6 +72,11 @@ body.paper-page .site-shell {
   background: #fff;
 }
 
+.paper-topbar .site-stamp {
+  grid-column: 3;
+  justify-self: end;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -816,6 +821,24 @@ h1 {
   font-weight: 650;
 }
 
+.entry-title-primary,
+.entry-title-affiliation {
+  display: inline-flex;
+  align-items: center;
+}
+
+.entry-title-affiliation {
+  margin-left: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: var(--accent);
+  background: rgba(95,134,207,.1);
+  font-size: .84em;
+  font-weight: 620;
+  letter-spacing: .01em;
+  vertical-align: middle;
+}
+
 .timeline p,
 .teaching-grid p {
   margin: 0;
@@ -864,6 +887,11 @@ h1 {
     gap: 10px;
   }
 
+  .paper-topbar .site-stamp {
+    grid-column: auto;
+    justify-self: start;
+  }
+
   .tabs {
     justify-content: flex-start;
     width: 100%;
@@ -886,6 +914,12 @@ h1 {
   .timeline li {
     grid-template-columns: 104px minmax(0,1fr);
     gap: 16px;
+  }
+
+  .entry-title-affiliation {
+    display: inline-flex;
+    margin-top: 8px;
+    margin-left: 0;
   }
 }
 
