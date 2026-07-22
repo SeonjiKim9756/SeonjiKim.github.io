@@ -14,7 +14,7 @@
         <span class="monogram"><img class="monogram-mark" src="assets/profile-mark-line.png" alt="" aria-hidden="true"></span>
         <span>SEONJI KIM</span>
       </a>
-      <div class="site-stamp" id="site-stamp">Last updated July 22, 2026</div>
+      <div class="site-stamp" id="site-stamp">Last updated July 2026</div>
     </header>
 
     <section class="panel content-section paper-page-section" aria-label="Publication detail">
@@ -26,24 +26,21 @@
         <a id="paper-pdf" href="#" target="_blank" rel="noreferrer">Download PDF ↗</a>
         <a id="paper-record" href="#" target="_blank" rel="noreferrer">Publication record ↗</a>
       </div>
-      <div class="paper-grid">
-        <div>
-          <h3>Abstract</h3>
-          <p id="paper-abstract" class="paper-abstract"></p>
-          <section class="bibtex-card" aria-label="BibTeX citation">
-            <div class="bibtex-header">
-              <h3>BibTeX</h3>
-              <button id="paper-bibtex-copy" class="copy-button" type="button" data-copy-bibtex disabled>Copy BibTeX</button>
-            </div>
-            <pre id="paper-bibtex-text" class="paper-bibtex">BibTeX will appear here.</pre>
-          </section>
-        </div>
-        <div>
-          <h3>Main figure</h3>
-          <div id="paper-figure" class="main-figure"></div>
-          <p id="figure-caption" class="figure-caption"></p>
-        </div>
+      <div class="paper-figure-stack">
+        <div id="paper-figure" class="main-figure"></div>
+        <p id="figure-caption" class="figure-caption"></p>
       </div>
+      <section class="paper-copy-block" aria-label="Abstract">
+        <h2>Abstract</h2>
+        <p id="paper-abstract" class="paper-abstract"></p>
+      </section>
+      <section class="bibtex-card" aria-label="BibTeX citation">
+        <div class="bibtex-header">
+          <h3>BibTeX</h3>
+          <button id="paper-bibtex-copy" class="copy-button" type="button" data-copy-bibtex disabled>Copy BibTeX</button>
+        </div>
+        <pre id="paper-bibtex-text" class="paper-bibtex">BibTeX will appear here.</pre>
+      </section>
     </section>
   </main>
   <script src="assets/js/paper.js" defer></script>

@@ -15,19 +15,19 @@
   const authorHTML = authors => authors.map(name => name === owner ? `<strong>${escapeHTML(name)}</strong>` : escapeHTML(name)).join(", ");
 
   function paperFigurePath(paper) {
-    return paper.mainFigure || paper.thumbnail || "";
+    return paper.mainFigure || paper.thumbnail || paper.representativeFigure || "";
   }
 
-  function figurePlaceholderHTML() {
-    return '<span class="figure-placeholder"><strong>Main figure</strong><span>Figure coming soon</span></span>';
+  function figurePlaceholderHTML(paper) {
+    return `<span class="abstract-visual abstract-visual--${escapeHTML(paper?.visualType || "generic")}" aria-hidden="true"><span></span><span></span><span></span></span>`;
   }
 
   function visualHTML(paper) {
     const figurePath = paperFigurePath(paper);
     if (figurePath) {
-      return `<img src="${escapeHTML(figurePath)}" alt="${escapeHTML(`Main figure for ${paper.title}`)}">`;
+      return `<img src="${escapeHTML(figurePath)}" alt="${escapeHTML(`Representative image for ${paper.title}`)}">`;
     }
-    return figurePlaceholderHTML();
+    return figurePlaceholderHTML(paper);
   }
 
   async function copyText(value) {
@@ -71,7 +71,7 @@
 
     updateBibtexPanel(paper);
     document.getElementById("paper-figure").innerHTML = visualHTML(paper);
-    document.getElementById("figure-caption").textContent = paper.figureCaption || (paperFigurePath(paper) ? "" : "Main figure is not cached yet for this publication.");
+    document.getElementById("figure-caption").textContent = paper.figureCaption || (paperFigurePath(paper) ? "" : "Conceptual visual generated from the paper's research theme.");
   }
 
   function renderMissing(message) {
@@ -111,9 +111,7 @@
       return response.json();
     })
     .then(publicationData => {
-      if (publicationData.lastUpdated && siteStamp) {
-        siteStamp.textContent = `Last updated ${publicationData.lastUpdated}`;
-      }
+      if (publicationData.lastUpdated && siteStamp) siteStamp.textContent = `Last updated ${publicationData.lastUpdated}`;
       const papers = publicationData.publications || [];
       const paper = papers.find(item => item.id === paperId);
       if (!paperId || !paper) {
