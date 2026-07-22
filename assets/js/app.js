@@ -1,5 +1,5 @@
 (() => {
-  const CACHE_BUST = "20260722o";
+  const CACHE_BUST = "20260722q";
   const owner = "Seonji Kim";
   const list = document.getElementById("publication-list");
   const heroMeta = document.getElementById("hero-meta");
@@ -73,10 +73,12 @@
     heroMeta.innerHTML = "";
     (data.heroMeta || []).forEach((item, index) => {
       const span = document.createElement("span");
+      span.className = "meta-item";
       span.textContent = item;
       heroMeta.appendChild(span);
       if (index < data.heroMeta.length - 1) {
         const divider = document.createElement("span");
+        divider.className = "meta-divider";
         divider.textContent = "·";
         heroMeta.appendChild(divider);
       }

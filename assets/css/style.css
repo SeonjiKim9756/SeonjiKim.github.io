@@ -161,8 +161,9 @@ body.paper-page .site-shell {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) 190px;
-  gap: 42px;
+  grid-template-columns: minmax(0, 560px) 190px;
+  justify-content: space-between;
+  gap: clamp(56px, 8vw, 128px);
   align-items: center;
 }
 
@@ -171,8 +172,18 @@ body.paper-page .site-shell {
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 16px;
-  color: var(--muted);
-  font-size: 13px;
+  color: var(--fg);
+  font-size: 15px;
+  font-weight: 620;
+  letter-spacing: -.01em;
+}
+
+.meta-item {
+  color: var(--fg);
+}
+
+.meta-divider {
+  color: color-mix(in srgb, var(--muted) 75%, transparent);
 }
 
 h1 {
@@ -188,8 +199,8 @@ h1 {
   max-width: 660px;
   margin: 20px 0 0;
   color: var(--muted);
-  font-size: clamp(14px, 1.45vw, 17px);
-  line-height: 1.5;
+  font-size: clamp(12px, 1.15vw, 14px);
+  line-height: 1.42;
 }
 
 .statement strong,
