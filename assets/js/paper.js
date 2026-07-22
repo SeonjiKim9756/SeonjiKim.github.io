@@ -103,7 +103,16 @@
 
     const record = document.getElementById("paper-record");
     record.hidden = !paper.record;
-    if (paper.record) record.href = paper.record;
+    if (paper.record) {
+      record.href = paper.record;
+      if (paper.record.includes("dblp.org")) {
+        record.textContent = "DBLP record ↗";
+      } else if (paper.record.includes("doi.org")) {
+        record.textContent = "DOI page ↗";
+      } else {
+        record.textContent = "External record ↗";
+      }
+    }
 
     updateBibtexPanel(paper);
     document.getElementById("paper-figure").innerHTML = visualHTML(paper);
