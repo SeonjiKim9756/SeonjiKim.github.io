@@ -35,8 +35,8 @@ PALETTE = {
     "ink": colors.HexColor("#171817"),
     "muted": colors.HexColor("#616461"),
     "line": colors.HexColor("#d7d8d3"),
-    "accent": colors.HexColor("#9fb9ad"),
-    "soft": colors.HexColor("#eef0eb"),
+    "accent": colors.HexColor("#6b88b6"),
+    "soft": colors.HexColor("#edf3f8"),
 }
 
 
@@ -301,13 +301,12 @@ def build_pdf() -> None:
     )
     story.extend([intro_table, Spacer(1, 10), HRFlowable(width="100%", thickness=0.8, color=PALETTE["line"]), Spacer(1, 12)])
 
-    story.extend(section_heading("Publications", styles))
-    current_year = None
-    for paper in publications.get("publications", []):
-        if paper["year"] != current_year:
-            current_year = paper["year"]
-            story.append(Paragraph(str(current_year), styles["year_group"]))
-        story.extend(make_publication_block(paper, styles))
+    story.extend(section_heading("About", styles))
+    story.append(paragraph(profile.get("about", ""), styles["body"]))
+    story.append(Spacer(1, 10))
+    story.append(Paragraph("RESEARCH INTERESTS", styles["label"]))
+    story.append(Spacer(1, 4))
+    story.append(Paragraph(" · ".join(profile.get("interests", [])), styles["body"]))
 
     story.extend(section_heading("Research Experience", styles))
     story.append(make_timeline(profile.get("research", []), styles, include_meta=True))
@@ -318,12 +317,13 @@ def build_pdf() -> None:
     story.extend(section_heading("Teaching", styles))
     story.append(make_teaching(profile.get("teaching", []), styles))
 
-    story.extend(section_heading("About", styles))
-    story.append(paragraph(profile.get("about", ""), styles["body"]))
-    story.append(Spacer(1, 10))
-    story.append(Paragraph("RESEARCH INTERESTS", styles["label"]))
-    story.append(Spacer(1, 4))
-    story.append(Paragraph(" · ".join(profile.get("interests", [])), styles["body"]))
+    story.extend(section_heading("Publications", styles))
+    current_year = None
+    for paper in publications.get("publications", []):
+        if paper["year"] != current_year:
+            current_year = paper["year"]
+            story.append(Paragraph(str(current_year), styles["year_group"]))
+        story.extend(make_publication_block(paper, styles))
 
     doc.build(story, onFirstPage=on_page, onLaterPages=on_page)
 
