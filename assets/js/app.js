@@ -1,5 +1,5 @@
 (() => {
-  const CACHE_BUST = "20260722d";
+  const CACHE_BUST = "20260722f";
   const owner = "Seonji Kim";
   const list = document.getElementById("publication-list");
   const heroMeta = document.getElementById("hero-meta");
@@ -36,6 +36,7 @@
 
   const authorHTML = authors => authors.map(name => name === owner ? `<strong>${escapeHTML(name)}</strong>` : escapeHTML(name)).join(", ");
   const emphasisHTML = text => escapeHTML(text).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+  const multilineEmphasisHTML = text => emphasisHTML(text).replace(/\n/g, "<br>");
 
   function paperFigurePath(paper) {
     return paper.mainFigure || paper.thumbnail || paper.representativeFigure || "";
@@ -82,7 +83,7 @@
     });
 
     heroName.innerHTML = (data.nameLines || []).map(escapeHTML).join("<br>");
-    heroStatement.innerHTML = data.statementHtml || emphasisHTML(data.statement || "");
+    heroStatement.innerHTML = data.statementHtml || multilineEmphasisHTML(data.statement || "");
     aboutCopy.innerHTML = data.aboutHtml || emphasisHTML(data.about || "");
 
     interestList.innerHTML = "";
