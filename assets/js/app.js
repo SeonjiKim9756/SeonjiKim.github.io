@@ -11,10 +11,6 @@
   const teachingGrid = document.getElementById("teaching-grid");
   const socialLinks = document.getElementById("social-links");
   const siteStamp = document.getElementById("site-stamp");
-  const paperSection = document.getElementById("paper-detail");
-  const paperBack = document.querySelector("[data-paper-back]");
-  const bibtexCopyButton = document.getElementById("paper-bibtex-copy");
-  const bibtexText = document.getElementById("paper-bibtex-text");
   const sectionLinks = [...document.querySelectorAll("[data-section-link]")];
   const sections = sectionLinks
     .map(link => document.getElementById(link.dataset.sectionLink))
@@ -43,18 +39,16 @@
     return paper.mainFigure || paper.thumbnail || "";
   }
 
-  function figurePlaceholderHTML(compact = false) {
-    const className = compact ? "figure-placeholder compact" : "figure-placeholder";
-    return `<span class="${className}"><strong>Main figure</strong><span>Figure coming soon</span></span>`;
+  function figurePlaceholderHTML() {
+    return '<span class="figure-placeholder compact"><strong>Main figure</strong><span>Figure coming soon</span></span>';
   }
 
-  function visualHTML(paper, compact = false) {
+  function visualHTML(paper) {
     const figurePath = paperFigurePath(paper);
     if (figurePath) {
-      const alt = compact ? `Main figure from ${paper.title}` : `Main figure for ${paper.title}`;
-      return `<img src="${escapeHTML(figurePath)}" alt="${escapeHTML(alt)}">`;
+      return `<img src="${escapeHTML(figurePath)}" alt="${escapeHTML(`Main figure from ${paper.title}`)}">`;
     }
-    return figurePlaceholderHTML(compact);
+    return figurePlaceholderHTML();
   }
 
   function setActiveSection(sectionId) {
@@ -131,68 +125,13 @@
       papers.filter(paper => paper.year === year).forEach(paper => {
         const card = document.createElement("a");
         card.className = "publication-card";
-        card.href = `#paper/${paper.id}`;
-        card.dataset.paper = paper.id;
-        card.innerHTML = `<span class="publication-visual">${visualHTML(paper, true)}</span><span><span class="publication-title">${escapeHTML(paper.title)}</span><span class="publication-authors">${authorHTML(paper.authors)}</span><span class="publication-venue">${escapeHTML(paper.venue)}</span></span>`;
+        card.href = `paper.html?id=${encodeURIComponent(paper.id)}`;
+        card.target = "_blank";
+        card.rel = "noreferrer";
+        card.innerHTML = `<span class="publication-visual">${visualHTML(paper)}</span><span><span class="publication-title">${escapeHTML(paper.title)}</span><span class="publication-authors">${authorHTML(paper.authors)}</span><span class="publication-venue">${escapeHTML(paper.venue)}</span></span>`;
         group.querySelector(".publication-grid").appendChild(card);
       });
       list.appendChild(group);
-    });
-  }
-
-  async function copyText(value) {
-    if (navigator.clipboard?.writeText) {
-      await navigator.clipboard.writeText(value);
-      return;
-    }
-    const textArea = document.createElement("textarea");
-    textArea.value = value;
-    textArea.setAttribute("readonly", "");
-    textArea.style.position = "absolute";
-    textArea.style.left = "-9999px";
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    textArea.remove();
-  }
-
-  function updateBibtexPanel(paper) {
-    const value = (paper.bibtexText || "").trim();
-    bibtexText.textContent = value || "BibTeX unavailable for this entry yet.";
-    bibtexCopyButton.disabled = !value;
-    bibtexCopyButton.dataset.bibtexValue = value;
-    bibtexCopyButton.textContent = "Copy BibTeX";
-  }
-
-  function closePaperDetail() {
-    paperSection.hidden = true;
-  }
-
-  function openPaper(id, updateHash = true) {
-    const paper = papers.find(item => item.id === id);
-    if (!paper) return;
-
-    document.getElementById("paper-kicker").textContent = paper.venue;
-    document.getElementById("paper-title").textContent = paper.title;
-    document.getElementById("paper-authors").innerHTML = authorHTML(paper.authors);
-    document.getElementById("paper-abstract").textContent = paper.abstract || "Abstract will be added from the paper PDF.";
-
-    const pdf = document.getElementById("paper-pdf");
-    pdf.hidden = !paper.pdf;
-    if (paper.pdf) pdf.href = paper.pdf;
-
-    const record = document.getElementById("paper-record");
-    record.hidden = !paper.record;
-    if (paper.record) record.href = paper.record;
-
-    updateBibtexPanel(paper);
-    document.getElementById("paper-figure").innerHTML = visualHTML(paper, false);
-    document.getElementById("figure-caption").textContent = paper.figureCaption || (paperFigurePath(paper) ? "" : "Main figure is not cached yet for this publication.");
-
-    paperSection.hidden = false;
-    if (updateHash) history.pushState(null, "", `#paper/${paper.id}`);
-    requestAnimationFrame(() => {
-      paperSection.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
 
@@ -206,57 +145,17 @@
   function syncFromHash() {
     const hash = location.hash.replace(/^#/, "");
     if (!hash) {
-      closePaperDetail();
       setActiveSection("");
       return;
     }
-    if (hash.startsWith("paper/")) {
-      openPaper(hash.split("/")[1], false);
-      setActiveSection("publications");
-      return;
-    }
-    closePaperDetail();
     scrollToSection(hash);
   }
-
-  document.addEventListener("click", async event => {
-    const card = event.target.closest("[data-paper]");
-    if (card) {
-      event.preventDefault();
-      openPaper(card.dataset.paper);
-      return;
-    }
-
-    if (event.target.closest("[data-paper-back]")) {
-      event.preventDefault();
-      history.pushState(null, "", "#publications");
-      closePaperDetail();
-      scrollToSection("publications");
-      return;
-    }
-
-    const copyButton = event.target.closest("[data-copy-bibtex]");
-    if (copyButton) {
-      event.preventDefault();
-      if (copyButton.disabled) return;
-      try {
-        await copyText(copyButton.dataset.bibtexValue || "");
-        copyButton.textContent = "Copied";
-      } catch (error) {
-        copyButton.textContent = "Copy failed";
-      }
-      window.setTimeout(() => {
-        copyButton.textContent = "Copy BibTeX";
-      }, 1800);
-    }
-  });
 
   sectionLinks.forEach(link => {
     link.addEventListener("click", event => {
       event.preventDefault();
       const sectionId = link.dataset.sectionLink;
       history.pushState(null, "", `#${sectionId}`);
-      closePaperDetail();
       scrollToSection(sectionId);
     });
   });
