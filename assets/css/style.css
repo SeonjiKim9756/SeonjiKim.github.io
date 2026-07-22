@@ -1,11 +1,11 @@
 :root {
-  --bg: #f8f5ef;
+  --bg: #f4f8fc;
   --fg: #191816;
-  --muted: #68645d;
-  --line: #ddd5ca;
-  --soft: #eef3f9;
-  --accent: #6587b8;
-  --accent-soft: #7db3c7;
+  --muted: #617283;
+  --line: #d8e5f0;
+  --soft: #ebf4fb;
+  --accent: #5f86cf;
+  --accent-soft: #4ba99e;
   color-scheme: light;
   font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -24,8 +24,8 @@ body {
   margin: 0;
   color: var(--fg);
   background:
-    radial-gradient(circle at top right, rgba(101,135,184,.15), transparent 28%),
-    radial-gradient(circle at 0% 22%, rgba(125,179,199,.18), transparent 24%),
+    radial-gradient(circle at top right, rgba(95,134,207,.14), transparent 28%),
+    radial-gradient(circle at 0% 22%, rgba(75,169,158,.12), transparent 24%),
     var(--bg);
 }
 
@@ -47,9 +47,9 @@ a { color: inherit; }
   gap: 20px;
   padding: 14px 18px;
   border-radius: 18px;
-  background: rgba(248,245,239,.8);
+  background: rgba(244,248,252,.72);
   backdrop-filter: blur(14px);
-  box-shadow: 0 12px 30px rgba(47,73,109,.08);
+  box-shadow: none;
 }
 
 .brand {
@@ -70,14 +70,16 @@ a { color: inherit; }
   width: 34px;
   height: 34px;
   overflow: visible;
+  border-radius: 50%;
+  background: #111111;
 }
 
 .monogram-mark {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 78%;
+  height: 78%;
   object-fit: contain;
-  filter: drop-shadow(0 8px 16px rgba(101,135,184,.12));
+  filter: none;
 }
 
 .tabs {
@@ -115,7 +117,7 @@ a { color: inherit; }
   padding: 7px 12px;
   border-radius: 999px;
   color: var(--accent);
-  background: rgba(101,135,184,.12);
+  background: rgba(95,134,207,.1);
 }
 
 .site-stamp {
@@ -177,11 +179,11 @@ h1 {
   padding: 12px 17px;
   border-radius: 999px;
   color: #fff;
-  background: linear-gradient(135deg, var(--accent), #7ea0cf);
+  background: linear-gradient(135deg, var(--accent), var(--accent-soft));
   font-size: 14px;
   font-weight: 650;
   text-decoration: none;
-  box-shadow: 0 12px 24px rgba(101,135,184,.2);
+  box-shadow: 0 12px 24px rgba(95,134,207,.16);
 }
 
 .primary-action:hover { opacity: .92; }
@@ -215,19 +217,16 @@ h1 {
   aspect-ratio: 1 / 1;
   justify-self: center;
   overflow: hidden;
-  border: 4px solid rgba(255,255,255,.75);
   border-radius: 50%;
-  box-shadow:
-    0 0 0 1px rgba(221,213,202,.7),
-    0 18px 38px rgba(25,24,22,.10);
-  background: linear-gradient(135deg, rgba(125,179,199,.28), rgba(101,135,184,.14));
+  box-shadow: none;
+  background: transparent;
 }
 
 .profile-photo > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 16%;
+  object-position: center center;
 }
 
 .profile-photo > span {
@@ -236,7 +235,7 @@ h1 {
   padding: 8px 10px;
   border-radius: 999px;
   color: var(--fg);
-  background: rgba(248,245,239,.88);
+  background: rgba(244,248,252,.92);
   font-size: 12px;
   text-align: center;
 }
@@ -250,7 +249,7 @@ h1 {
   padding: 24px 28px;
   border: 1px solid var(--line);
   border-radius: 24px;
-  background: rgba(255,255,255,.45);
+  background: rgba(255,255,255,.52);
 }
 
 .section-kicker {
@@ -335,7 +334,7 @@ h1 {
   padding: 6px 12px;
   border-radius: 999px;
   color: #fff;
-  background: linear-gradient(135deg, var(--accent-soft), #6d95be);
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent));
   font-size: 13px;
   font-weight: 700;
 }
@@ -364,10 +363,10 @@ h1 {
 
 .publication-card:hover,
 .publication-card:focus-visible {
-  border-color: rgba(101,135,184,.32);
+  border-color: rgba(95,134,207,.28);
   background: rgba(255,255,255,.82);
   transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(25,24,22,.06);
+  box-shadow: 0 14px 28px rgba(47,73,109,.08);
   outline: none;
 }
 
@@ -378,7 +377,7 @@ h1 {
   height: 104px;
   overflow: hidden;
   border-radius: 14px;
-  background: linear-gradient(145deg, rgba(125,179,199,.2), rgba(101,135,184,.08));
+  background: linear-gradient(145deg, rgba(75,169,158,.12), rgba(95,134,207,.08));
 }
 
 .publication-visual img {
@@ -511,7 +510,7 @@ h1 {
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: rgba(238,243,249,.86);
+  background: rgba(235,244,251,.92);
 }
 
 .bibtex-header {
@@ -532,7 +531,7 @@ h1 {
   align-items: center;
   justify-content: center;
   padding: 9px 12px;
-  border: 1px solid rgba(101,135,184,.26);
+  border: 1px solid rgba(95,134,207,.22);
   border-radius: 999px;
   color: var(--accent);
   background: rgba(255,255,255,.72);
@@ -568,7 +567,7 @@ h1 {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 18px;
-  background: linear-gradient(145deg, rgba(125,179,199,.18), rgba(101,135,184,.08));
+  background: linear-gradient(145deg, rgba(75,169,158,.12), rgba(95,134,207,.08));
 }
 
 .main-figure img {
@@ -647,17 +646,17 @@ h1 {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #171614;
-    --fg: #f5f1ea;
-    --muted: #b2aca1;
-    --line: #3a352f;
-    --soft: #24211d;
+    --bg: #10161d;
+    --fg: #eff5fb;
+    --muted: #a5b4c3;
+    --line: #283745;
+    --soft: #18212b;
   }
 
   body {
     background:
-      radial-gradient(circle at top right, rgba(101,135,184,.22), transparent 26%),
-      radial-gradient(circle at 0% 22%, rgba(125,179,199,.2), transparent 24%),
+      radial-gradient(circle at top right, rgba(95,134,207,.22), transparent 26%),
+      radial-gradient(circle at 0% 22%, rgba(75,169,158,.16), transparent 24%),
       var(--bg);
   }
 
@@ -665,17 +664,17 @@ h1 {
   .home-summary,
   .publication-card,
   .paper-section {
-    background: rgba(23,22,20,.82);
+    background: rgba(16,22,29,.82);
   }
 
   .publication-visual,
   .main-figure,
   .bibtex-card {
-    background: rgba(36,33,29,.86);
+    background: rgba(24,33,43,.86);
   }
 
   .profile-photo > span {
-    background: rgba(23,22,20,.86);
+    background: rgba(16,22,29,.9);
     color: var(--fg);
   }
 }

@@ -32,11 +32,11 @@ MARGIN_Y = 18 * mm
 CONTENT_WIDTH = PAGE_WIDTH - 2 * MARGIN_X
 
 PALETTE = {
-    "ink": colors.HexColor("#171817"),
-    "muted": colors.HexColor("#616461"),
-    "line": colors.HexColor("#d7d8d3"),
-    "accent": colors.HexColor("#6b88b6"),
-    "soft": colors.HexColor("#edf3f8"),
+    "ink": colors.HexColor("#16212b"),
+    "muted": colors.HexColor("#5f7184"),
+    "line": colors.HexColor("#d8e5f0"),
+    "accent": colors.HexColor("#5f86cf"),
+    "soft": colors.HexColor("#ebf4fb"),
 }
 
 
