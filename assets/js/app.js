@@ -1,7 +1,5 @@
 (() => {
   const owner = "Seonji Kim";
-  const panels = [...document.querySelectorAll("[data-panel]")];
-  const tabs = [...document.querySelectorAll("[data-tab]")];
   const list = document.getElementById("publication-list");
   const heroMeta = document.getElementById("hero-meta");
   const heroName = document.getElementById("hero-name");
@@ -13,10 +11,16 @@
   const teachingGrid = document.getElementById("teaching-grid");
   const socialLinks = document.getElementById("social-links");
   const siteStamp = document.getElementById("site-stamp");
+  const paperSection = document.getElementById("paper-detail");
+  const paperBack = document.querySelector("[data-paper-back]");
   const bibtexCopyButton = document.getElementById("paper-bibtex-copy");
   const bibtexText = document.getElementById("paper-bibtex-text");
+  const sectionLinks = [...document.querySelectorAll("[data-section-link]")];
+  const sections = sectionLinks
+    .map(link => document.getElementById(link.dataset.sectionLink))
+    .filter(Boolean);
+
   let papers = [];
-  let profile = null;
 
   const socialIcons = {
     email: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>',
@@ -53,16 +57,13 @@
     return figurePlaceholderHTML(compact);
   }
 
-  function showPanel(name) {
-    panels.forEach(panel => {
-      panel.hidden = panel.dataset.panel !== name;
+  function setActiveSection(sectionId) {
+    sectionLinks.forEach(link => {
+      link.setAttribute("aria-current", String(link.dataset.sectionLink === sectionId));
     });
-    tabs.forEach(tab => tab.setAttribute("aria-selected", String(tab.dataset.tab === name)));
-    window.scrollTo({ top: 0, behavior: "auto" });
   }
 
   function renderProfile(data) {
-    profile = data;
     heroMeta.innerHTML = "";
     (data.heroMeta || []).forEach((item, index) => {
       const span = document.createElement("span");
@@ -163,6 +164,10 @@
     bibtexCopyButton.textContent = "Copy BibTeX";
   }
 
+  function closePaperDetail() {
+    paperSection.hidden = true;
+  }
+
   function openPaper(id, updateHash = true) {
     const paper = papers.find(item => item.id === id);
     if (!paper) return;
@@ -181,37 +186,40 @@
     if (paper.record) record.href = paper.record;
 
     updateBibtexPanel(paper);
-
-    const figure = document.getElementById("paper-figure");
-    figure.innerHTML = visualHTML(paper, false);
+    document.getElementById("paper-figure").innerHTML = visualHTML(paper, false);
     document.getElementById("figure-caption").textContent = paper.figureCaption || (paperFigurePath(paper) ? "" : "Main figure is not cached yet for this publication.");
 
-    showPanel("paper");
+    paperSection.hidden = false;
     if (updateHash) history.pushState(null, "", `#paper/${paper.id}`);
+    requestAnimationFrame(() => {
+      paperSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
+  function scrollToSection(id) {
+    const target = document.getElementById(id);
+    if (!target) return;
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    setActiveSection(id);
   }
 
   function syncFromHash() {
-    const initial = location.hash.replace(/^#/, "");
-    if (initial.startsWith("paper/")) {
-      openPaper(initial.split("/")[1], false);
+    const hash = location.hash.replace(/^#/, "");
+    if (!hash) {
+      closePaperDetail();
+      setActiveSection("");
       return;
     }
-    if (["about", "publications", "research", "education", "teaching"].includes(initial)) {
-      showPanel(initial);
+    if (hash.startsWith("paper/")) {
+      openPaper(hash.split("/")[1], false);
+      setActiveSection("publications");
       return;
     }
-    showPanel("about");
+    closePaperDetail();
+    scrollToSection(hash);
   }
 
   document.addEventListener("click", async event => {
-    const tab = event.target.closest("[data-tab]");
-    if (tab) {
-      event.preventDefault();
-      history.pushState(null, "", `#${tab.dataset.tab}`);
-      syncFromHash();
-      return;
-    }
-
     const card = event.target.closest("[data-paper]");
     if (card) {
       event.preventDefault();
@@ -222,7 +230,8 @@
     if (event.target.closest("[data-paper-back]")) {
       event.preventDefault();
       history.pushState(null, "", "#publications");
-      syncFromHash();
+      closePaperDetail();
+      scrollToSection("publications");
       return;
     }
 
@@ -242,6 +251,26 @@
     }
   });
 
+  sectionLinks.forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      const sectionId = link.dataset.sectionLink;
+      history.pushState(null, "", `#${sectionId}`);
+      closePaperDetail();
+      scrollToSection(sectionId);
+    });
+  });
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (visible?.target?.id) setActiveSection(visible.target.id);
+    }, { rootMargin: "-20% 0px -60% 0px", threshold: [0.15, 0.4, 0.7] });
+    sections.forEach(section => observer.observe(section));
+  }
+
   Promise.all([
     fetch("data/profile.json").then(response => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -257,7 +286,7 @@
       papers = publicationData.publications || [];
       renderPublications();
       if (publicationData.lastUpdated && siteStamp) siteStamp.textContent = `Last updated ${publicationData.lastUpdated}`;
-      syncFromHash();
+      if (location.hash) syncFromHash();
     })
     .catch(error => {
       list.innerHTML = `<p class="notice">Site data could not be loaded. Open this site through a web server or GitHub Pages, not by double-clicking index.html.<br><small>${escapeHTML(error.message)}</small></p>`;
