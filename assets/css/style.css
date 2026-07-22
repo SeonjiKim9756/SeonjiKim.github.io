@@ -273,7 +273,7 @@ h1 {
 .about-copy {
   margin: 0;
   color: var(--muted);
-  font-size: clamp(15px, 1.75vw, 18px);
+  font-size: clamp(14px, 1.55vw, 16px);
   line-height: 1.62;
 }
 
@@ -312,7 +312,7 @@ h1 {
 
 .interests > div span {
   position: relative;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 560;
 }
 
@@ -505,6 +505,7 @@ h1 {
 }
 
 .paper-figure-stack {
+  max-width: 920px;
   margin-top: 34px;
 }
 
@@ -537,11 +538,12 @@ h1 {
 }
 
 .bibtex-card {
+  max-width: 860px;
   margin-top: 28px;
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: rgba(235,244,251,.92);
+  background: #fff;
 }
 
 .bibtex-header {
@@ -582,13 +584,13 @@ h1 {
 
 .paper-bibtex {
   width: 100%;
-  min-height: 220px;
+  min-height: 190px;
   margin: 0;
   padding: 14px 16px;
   overflow: auto;
   border: 1px solid rgba(95,134,207,.14);
   border-radius: 12px;
-  background: rgba(255,255,255,.86);
+  background: #fff;
   color: var(--fg);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 12px;
@@ -605,7 +607,7 @@ h1 {
   overflow: hidden;
   border: 0;
   border-radius: 0;
-  background: transparent;
+  background: #fff;
 }
 
 .main-figure img {
@@ -614,8 +616,8 @@ h1 {
   max-width: min(100%, 880px);
   max-height: 620px;
   object-fit: contain;
-  border-radius: 18px;
-  box-shadow: 0 18px 36px rgba(47,73,109,.08);
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .figure-caption {
