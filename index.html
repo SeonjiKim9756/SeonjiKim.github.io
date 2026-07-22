@@ -10,18 +10,20 @@
 <body>
   <main class="site-shell" aria-label="Seonji Kim academic CV">
     <header class="topbar">
-      <div class="brand"><span class="monogram"><img src="assets/profile-mark-white.png" alt="" aria-hidden="true"></span><span>SEONJI KIM</span></div>
-      <nav class="tabs" role="tablist" aria-label="CV sections">
-        <a class="tab" href="#about" data-tab="about" role="tab" aria-selected="true">About</a>
-        <a class="tab" href="#publications" data-tab="publications" role="tab" aria-selected="false">Publications</a>
-        <a class="tab" href="#research" data-tab="research" role="tab" aria-selected="false">Research</a>
-        <a class="tab" href="#education" data-tab="education" role="tab" aria-selected="false">Education</a>
-        <a class="tab" href="#teaching" data-tab="teaching" role="tab" aria-selected="false">Teaching</a>
+      <a class="brand home-link" href="#home" aria-label="Back to top">
+        <span class="monogram"><img class="monogram-mark" src="assets/profile-mark-raw.png" alt="" aria-hidden="true"></span>
+        <span>SEONJI KIM</span>
+      </a>
+      <nav class="tabs" aria-label="CV sections">
+        <a class="tab" href="#publications" data-section-link="publications">Publications</a>
+        <a class="tab" href="#research" data-section-link="research">Research</a>
+        <a class="tab" href="#education" data-section-link="education">Education</a>
+        <a class="tab" href="#teaching" data-section-link="teaching">Teaching</a>
       </nav>
-      <div class="site-stamp" id="site-stamp">Last updated July 2026</div>
+      <div class="site-stamp" id="site-stamp">Last updated July 22, 2026</div>
     </header>
 
-    <section class="panel" data-panel="about" role="tabpanel">
+    <section class="panel hero-panel" id="home" aria-label="Seonji Kim profile">
       <div class="hero">
         <div>
           <div class="meta" id="hero-meta"><span>Loading profile…</span></div>
@@ -30,34 +32,20 @@
           <a class="primary-action" href="assets/cv/Seonji_Kim_CV.pdf" download>Download CV</a>
           <div class="social-links" id="social-links"></div>
         </div>
-        <div class="profile-photo" role="img" aria-label="Profile photo of Seonji Kim"><span>SK</span><img src="assets/profile.jpg" alt="" onerror="this.hidden=true"><span>Replace assets/profile.jpg</span></div>
+        <div class="profile-photo" role="img" aria-label="Profile photo of Seonji Kim"><img src="assets/profile.jpg" alt="Seonji Kim" onerror="this.hidden=true"><span>Replace assets/profile.jpg</span></div>
       </div>
-      <div class="heading"><h2>About</h2></div>
-      <p class="about-copy" id="about-copy"></p>
-      <div class="interests"><span class="label">RESEARCH INTERESTS</span><div id="interest-list"></div></div>
+      <div class="home-summary">
+        <p class="about-copy" id="about-copy"></p>
+        <div class="interests"><span class="label">RESEARCH INTERESTS</span><div id="interest-list"></div></div>
+      </div>
     </section>
 
-    <section class="panel" data-panel="publications" role="tabpanel" hidden>
+    <section class="panel content-section" id="publications" aria-label="Publications">
       <div class="heading"><h2>Publications</h2></div>
       <div id="publication-list" class="publication-list" aria-live="polite"><p class="loading">Loading publications…</p></div>
     </section>
 
-    <section class="panel" data-panel="research" role="tabpanel" hidden>
-      <div class="heading"><h2>Research Experience</h2></div>
-      <ul class="timeline" id="research-timeline"></ul>
-    </section>
-
-    <section class="panel" data-panel="education" role="tabpanel" hidden>
-      <div class="heading"><h2>Education</h2></div>
-      <ol class="timeline" id="education-timeline"></ol>
-    </section>
-
-    <section class="panel" data-panel="teaching" role="tabpanel" hidden>
-      <div class="heading"><h2>Teaching</h2></div>
-      <div class="teaching-grid" id="teaching-grid"></div>
-    </section>
-
-    <section class="panel" data-panel="paper" role="tabpanel" hidden>
+    <section class="panel content-section paper-section" id="paper-detail" aria-label="Publication detail" hidden>
       <a class="paper-back" href="#publications" data-paper-back>← Back to Publications</a>
       <p id="paper-kicker" class="paper-kicker"></p>
       <h2 id="paper-title" class="paper-title"></h2>
@@ -80,6 +68,21 @@
         </div>
         <div><h3>Main figure</h3><div id="paper-figure" class="main-figure"></div><p id="figure-caption" class="figure-caption"></p></div>
       </div>
+    </section>
+
+    <section class="panel content-section" id="research" aria-label="Research experience">
+      <div class="heading"><h2>Research Experience</h2></div>
+      <ul class="timeline" id="research-timeline"></ul>
+    </section>
+
+    <section class="panel content-section" id="education" aria-label="Education">
+      <div class="heading"><h2>Education</h2></div>
+      <ol class="timeline" id="education-timeline"></ol>
+    </section>
+
+    <section class="panel content-section" id="teaching" aria-label="Teaching">
+      <div class="heading"><h2>Teaching</h2></div>
+      <div class="teaching-grid" id="teaching-grid"></div>
     </section>
   </main>
   <script src="assets/js/app.js" defer></script>
