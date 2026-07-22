@@ -3,28 +3,6 @@
   const siteStamp = document.getElementById("site-stamp");
   const bibtexCopyButton = document.getElementById("paper-bibtex-copy");
   const bibtexText = document.getElementById("paper-bibtex-text");
-  const abstractKeywords = [
-    "Mixed Reality",
-    "Augmented Reality",
-    "Virtual Reality",
-    "AR/VR/MR",
-    "AR/VR",
-    "MR",
-    "VR",
-    "AR",
-    "spatial computing",
-    "physical space",
-    "scene graph",
-    "remote collaboration",
-    "heterogeneous spaces",
-    "mutual space",
-    "stress relief",
-    "adaptive playback",
-    "multisensory",
-    "spatial soundscapes",
-    "spatial affordance"
-  ];
-
   const escapeHTML = value => String(value ?? "").replace(/[&<>'"]/g, char => ({
     "&": "&amp;",
     "<": "&lt;",
@@ -34,21 +12,6 @@
   }[char]));
 
   const authorHTML = authors => authors.map(name => name === owner ? `<strong>${escapeHTML(name)}</strong>` : escapeHTML(name)).join(", ");
-
-  function highlightAbstractHTML(text) {
-    let html = escapeHTML(text || "");
-    abstractKeywords
-      .sort((a, b) => b.length - a.length)
-      .forEach(keyword => {
-        const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-        html = html.replace(new RegExp(escaped, "gi"), match => `<strong class="abstract-accent">${match}</strong>`);
-      });
-    const firstSentence = html.match(/^.*?[.!?](?:\s|$)/);
-    if (firstSentence) {
-      html = html.replace(firstSentence[0], `<span class="abstract-lead">${firstSentence[0].trim()}</span> `);
-    }
-    return html;
-  }
 
   function paperFigurePath(paper) {
     return paper.mainFigure || paper.thumbnail || paper.representativeFigure || "";
@@ -95,7 +58,7 @@
     document.getElementById("paper-kicker").textContent = paper.venue;
     document.getElementById("paper-title").textContent = paper.title;
     document.getElementById("paper-authors").innerHTML = authorHTML(paper.authors || []);
-    document.getElementById("paper-abstract").innerHTML = highlightAbstractHTML(paper.abstract || "Abstract will be added from the paper PDF.");
+    document.getElementById("paper-abstract").textContent = paper.abstract || "Abstract will be added from the paper PDF.";
 
     const pdf = document.getElementById("paper-pdf");
     pdf.hidden = !paper.pdf;
