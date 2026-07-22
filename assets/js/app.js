@@ -36,11 +36,11 @@
   const emphasisHTML = text => escapeHTML(text).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 
   function paperFigurePath(paper) {
-    return paper.mainFigure || paper.thumbnail || "";
+    return paper.mainFigure || paper.thumbnail || paper.representativeFigure || "";
   }
 
-  function figurePlaceholderHTML() {
-    return '<span class="figure-placeholder compact"><strong>Main figure</strong><span>Figure coming soon</span></span>';
+  function figurePlaceholderHTML(paper) {
+    return `<span class="abstract-visual abstract-visual--${escapeHTML(paper?.visualType || "generic")}" aria-hidden="true"><span></span><span></span><span></span></span>`;
   }
 
   function visualHTML(paper) {
@@ -48,7 +48,7 @@
     if (figurePath) {
       return `<img src="${escapeHTML(figurePath)}" alt="${escapeHTML(`Main figure from ${paper.title}`)}">`;
     }
-    return figurePlaceholderHTML();
+    return figurePlaceholderHTML(paper);
   }
 
   function setActiveSection(sectionId) {
