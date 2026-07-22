@@ -37,6 +37,13 @@ a { color: inherit; }
   padding: 16px 0 72px;
 }
 
+.paper-page-shell {
+  padding: 18px 28px 72px;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 18px 42px rgba(47,73,109,.05);
+}
+
 .topbar {
   position: sticky;
   top: 12px;
@@ -50,6 +57,10 @@ a { color: inherit; }
   background: rgba(244,248,252,.72);
   backdrop-filter: blur(14px);
   box-shadow: none;
+}
+
+.paper-topbar {
+  background: #fff;
 }
 
 .brand {
@@ -67,8 +78,8 @@ a { color: inherit; }
 .monogram {
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   overflow: visible;
   border-radius: 50%;
   background: #111111;
@@ -76,8 +87,8 @@ a { color: inherit; }
 
 .monogram-mark {
   display: block;
-  width: 82%;
-  height: 82%;
+  width: 84%;
+  height: 84%;
   object-fit: contain;
   filter: none;
 }
@@ -153,8 +164,8 @@ a { color: inherit; }
 h1 {
   max-width: 620px;
   margin: 0;
-  font-size: clamp(38px, 6.4vw, 64px);
-  line-height: .94;
+  font-size: clamp(33px, 5.2vw, 52px);
+  line-height: 1.02;
   letter-spacing: -.055em;
   font-weight: 540;
 }
@@ -163,8 +174,8 @@ h1 {
   max-width: 660px;
   margin: 20px 0 0;
   color: var(--muted);
-  font-size: clamp(17px, 2.4vw, 22px);
-  line-height: 1.5;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.45;
 }
 
 .statement strong,
@@ -362,7 +373,7 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 18px;
   color: var(--fg);
-  background: rgba(255,255,255,.42);
+  background: #fff;
   text-decoration: none;
   transition: .18s ease;
 }
@@ -370,7 +381,7 @@ h1 {
 .publication-card:hover,
 .publication-card:focus-visible {
   border-color: rgba(95,134,207,.28);
-  background: rgba(255,255,255,.82);
+  background: #fff;
   transform: translateY(-2px);
   box-shadow: 0 14px 28px rgba(47,73,109,.08);
   outline: none;
@@ -383,13 +394,15 @@ h1 {
   height: 104px;
   overflow: hidden;
   border-radius: 14px;
-  background: linear-gradient(145deg, rgba(75,169,158,.12), rgba(95,134,207,.08));
+  background: #fff;
 }
 
 .publication-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
 }
 
 .figure-placeholder {
@@ -441,7 +454,7 @@ h1 {
   padding: 28px 0 0;
   border: 0;
   border-radius: 0;
-  background: transparent;
+  background: #fff;
 }
 
 .paper-back {
@@ -463,7 +476,7 @@ h1 {
 .paper-title {
   max-width: 950px;
   margin: 0;
-  font-size: clamp(28px, 4.2vw, 42px);
+  font-size: clamp(24px, 3.6vw, 36px);
   line-height: 1.12;
   letter-spacing: -.05em;
   font-weight: 560;
@@ -512,6 +525,17 @@ h1 {
   line-height: 1.82;
 }
 
+.abstract-lead {
+  display: inline;
+  color: var(--fg);
+  font-weight: 650;
+}
+
+.abstract-accent {
+  color: var(--accent);
+  font-weight: 700;
+}
+
 .bibtex-card {
   margin-top: 28px;
   padding: 18px;
@@ -557,14 +581,21 @@ h1 {
 }
 
 .paper-bibtex {
+  width: 100%;
+  min-height: 220px;
   margin: 0;
-  overflow-x: auto;
+  padding: 14px 16px;
+  overflow: auto;
+  border: 1px solid rgba(95,134,207,.14);
+  border-radius: 12px;
+  background: rgba(255,255,255,.86);
   color: var(--fg);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   font-size: 12px;
   line-height: 1.62;
-  white-space: pre-wrap;
-  word-break: break-word;
+  white-space: pre;
+  resize: vertical;
+  outline: none;
 }
 
 .main-figure {
@@ -578,8 +609,9 @@ h1 {
 }
 
 .main-figure img {
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: min(100%, 880px);
   max-height: 620px;
   object-fit: contain;
   border-radius: 18px;
@@ -818,6 +850,11 @@ h1 {
   .site-shell {
     width: min(100% - 24px, 1160px);
     padding-top: 12px;
+  }
+
+  .paper-page-shell {
+    padding: 16px 18px 56px;
+    border-radius: 22px;
   }
 
   .topbar {
