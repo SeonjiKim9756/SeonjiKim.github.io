@@ -1,9 +1,5 @@
 (() => {
-<<<<<<< HEAD
   const CACHE_BUST = "20260723d";
-=======
-  const CACHE_BUST = "20260723c";
->>>>>>> 18542684cd3c29e157cd6b50cf29a60805f8e566
   const owner = "Seonji Kim";
   const siteStamp = document.getElementById("site-stamp");
   const bibtexCopyButton = document.getElementById("paper-bibtex-copy");
