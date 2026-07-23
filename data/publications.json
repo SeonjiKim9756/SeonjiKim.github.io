@@ -23,31 +23,6 @@
       "bibtexText": "@article{DBLP:journals/tvcg/KimKCW26,\n  author       = {Seonji Kim and\n                  Dooyoung Kim and\n                  Selin Choi and\n                  Woontack Woo},\n  title        = {Spatial Affordance-Aware Affine Transformation Between Heterogeneous\n                  Spaces for Mixed Reality Remote Collaboration},\n  journal      = {{IEEE} Trans. Vis. Comput. Graph.},\n  volume       = {32},\n  number       = {5},\n  pages        = {3905--3913},\n  year         = {2026},\n  url          = {https://doi.org/10.1109/TVCG.2026.3680606},\n  doi          = {10.1109/TVCG.2026.3680606},\n  timestamp    = {Fri, 05 Jun 2026 19:41:28 +0200},\n  biburl       = {https://dblp.org/rec/journals/tvcg/KimKCW26.bib},\n  bibsource    = {dblp computer science bibliography, https://dblp.org}\n}"
     },
     {
-      "id": "unmatched-area-visualization",
-      "year": 2026,
-      "venue": "TVCG submission, 2026",
-      "title": "Sharing Augmented Reality Furniture across Heterogeneous Spaces: Asymmetric Effects of Unmatched Area Visualization",
-      "authors": [
-        "Seonji Kim",
-        "Jinwook Kim",
-        "Selin Choi",
-        "Minju Baeck",
-        "Boram Yoon",
-        "Jens Emil Grønbæk",
-        "Jae-eun Shin",
-        "Woontak Woo"
-      ],
-      "abstract": "Remote collaboration through augmented reality often involves sharing furniture across heterogeneous physical spaces, yet differences in layouts create unmatched surfaces, disrupting presence and task effectiveness. Prior approaches emphasized maximizing matched areas, overlooking the crucial challenge of visualizing these unmatched regions. We employed a 2 x 2 x 2 design, manipulating core and background visibility and comparing effects across collaborator sides, to study four visualization strategies. Findings indicate that altering core visibility primarily affects task workload, significantly reducing it without yielding reliable effects on social or spatial presence or completion time. By contrast, background visibility influenced social presence directly and via background-by-side interactions, revealing a role-conditioned, side-contingent trade-off between workload and presence. Based on these insights, we propose role- and side-aware recommendations for adaptation and visualization strategies managing this asymmetry, building a foundation for context-aware AR environments aiming at experience parity across heterogeneous physical spaces.",
-      "visualType": "collaboration",
-      "thumbnail": "assets/papers/unmatched-area-visualization/main-figure.png",
-      "mainFigure": "assets/papers/unmatched-area-visualization/main-figure.png",
-      "figureCaption": "Fig. 1: Design Overview. (A) shows two heterogeneous physical spaces on each collaborative side: a Core+ side with a large desk and background furniture, and a Core-only side with only a small desk. (B) shows that unmatched core and background furniture were visualized by manipulating Core Visibility (High/Low) and Background Visibility (High/Low) as separate factors.",
-      "pdf": "papers/inbox/unmatched-area-visualization/paper.pdf",
-      "bibtex": "",
-      "record": "",
-      "bibtexText": "@unpublished{kim2026unmatchedarea,\n  title        = {Sharing Augmented Reality Furniture across Heterogeneous Spaces: Asymmetric Effects of Unmatched Area Visualization},\n  author       = {Seonji Kim and Jinwook Kim and Selin Choi and Minju Baeck and Boram Yoon and Jens Emil Gr\\u00f8nb\\u00e6k and Jae-eun Shin and Woontak Woo},\n  note         = {TVCG submission manuscript},\n  year         = {2026}\n}"
-    },
-    {
       "id": "task-breakpoint",
       "year": 2026,
       "venue": "IEEE TVCG 32(5), 2026",
