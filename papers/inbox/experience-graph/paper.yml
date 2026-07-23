@@ -1,0 +1,22 @@
+id: "experience-graph"
+title: "Experience Graph using Spatio-Temporal Scene Data for Replaying Mixed Reality Interaction"
+authors:
+  - "Seonji Kim"
+year: 2024
+venue: "IEEE VR Workshops, 2024"
+abstract: "This study proposes an experience graph, a mixed reality experience replaying method for recording and replaying spatially adaptive interaction in a mixed reality environment. Many MR immersive interactions are experienced in a space different from the original recorded space, so it is important to adaptively experience the interaction in the local space. Prior work on scene generation or adaptive object placement addressed collision and mismatch in local spaces, but did not consider how space-dependent interactions change and how the resulting experience is transformed. This study structures spatial information and dependent interactions into an experience graph and proposes a spatially adaptive replay method that minimizes interaction deformation. Recorded interactions are evaluated quantitatively through loss rate and transformation rate, and replayed interactions are evaluated qualitatively through user experiments. The study ultimately reflects indicators important to user experience in the experience graph to support immersive spatial MR experiences that can be actively recorded and shared beyond the limitations of time and space."
+doi: "10.1109/VRW62533.2024.00350"
+record: "https://doi.org/10.1109/VRW62533.2024.00350"
+main_figure: ""
+figure_caption: "Figure 1: Scene graph using both geometric and semantic information of objects from progressed research."
+visual_type: graph
+bibtex: |
+  @inproceedings{Kim2024ExperienceGraph,
+    author = {Seonji Kim},
+    title = {Experience Graph using Spatio-Temporal Scene Data for Replaying Mixed Reality Interaction},
+    booktitle = {2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)},
+    year = {2024},
+    doi = {10.1109/VRW62533.2024.00350},
+    url = {https://doi.org/10.1109/VRW62533.2024.00350}
+  }
+bibtex_type: inproceedings
