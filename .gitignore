@@ -1,2 +1,8 @@
 .DS_Store
 .venv/
+papers/inbox/unmatched-area-visualization/
+assets/papers/unmatched-area-visualization/
+tmp/figure_audit/unmatched-area-visualization.jpg
+tmp/figure_reaudit/unmatched-area-visualization.jpg
+tmp/figure_reaudit_after/unmatched-area-visualization.jpg
+tmp/figure_reaudit_final/unmatched-area-visualization.jpg
