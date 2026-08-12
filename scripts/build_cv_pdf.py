@@ -286,7 +286,7 @@ def build_pdf() -> None:
         author="Seonji Kim",
     )
 
-    updated_stamp = f"Latest update: {publications.get('lastUpdated', 'July 2026')}"
+    updated_stamp = f"Latest update: {publications.get('lastUpdated', 'August 2026')}"
     story = []
 
     email_link = ""
