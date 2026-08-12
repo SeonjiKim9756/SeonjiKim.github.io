@@ -77,6 +77,14 @@ def build_styles() -> dict[str, ParagraphStyle]:
             leading=12,
             textColor=PALETTE["muted"],
         ),
+        "contact": ParagraphStyle(
+            "Contact",
+            parent=styles["BodyText"],
+            fontName="Helvetica",
+            fontSize=8.6,
+            leading=11,
+            textColor=PALETTE["muted"],
+        ),
         "stamp": ParagraphStyle(
             "Stamp",
             parent=styles["BodyText"],
@@ -281,10 +289,18 @@ def build_pdf() -> None:
     updated_stamp = f"Latest update: {publications.get('lastUpdated', 'July 2026')}"
     story = []
 
+    email_link = ""
+    for link in profile.get("socialLinks", []):
+        if link.get("label") == "Email":
+            email_link = str(link.get("href", "")).removeprefix("mailto:")
+            break
+
     intro_left = [
         Paragraph(profile["name"], styles["name"]),
         Paragraph(" · ".join(profile.get("heroMeta", [])), styles["meta"]),
     ]
+    if email_link:
+        intro_left.append(Paragraph(email_link, styles["contact"]))
     intro_right = [Paragraph(updated_stamp, styles["stamp"])]
 
     intro_table = Table([[intro_left, intro_right]], colWidths=[CONTENT_WIDTH - 54 * mm, 54 * mm])
@@ -302,11 +318,11 @@ def build_pdf() -> None:
     story.extend([intro_table, Spacer(1, 10), HRFlowable(width="100%", thickness=0.8, color=PALETTE["line"]), Spacer(1, 12)])
 
     story.extend(section_heading("About", styles))
-    story.append(paragraph(profile.get("about", ""), styles["body"]))
+    story.append(paragraph(profile.get("cvAbout", profile.get("about", "")), styles["body"]))
     story.append(Spacer(1, 10))
     story.append(Paragraph("RESEARCH INTERESTS", styles["label"]))
     story.append(Spacer(1, 4))
-    story.append(Paragraph(" · ".join(profile.get("interests", [])), styles["body"]))
+    story.append(Paragraph(" · ".join(profile.get("cvInterests", profile.get("interests", []))), styles["body"]))
 
     story.extend(section_heading("Publications", styles))
     current_year = None
