@@ -1,10 +1,11 @@
 (() => {
-  const CACHE_BUST = "20260812a";
+  const CACHE_BUST = "20261009a";
   const owner = "Seonji Kim";
   const list = document.getElementById("publication-list");
   const heroMeta = document.getElementById("hero-meta");
   const heroName = document.getElementById("hero-name");
   const heroStatement = document.getElementById("hero-statement");
+  const heroIntroduction = document.getElementById("hero-introduction");
   const aboutCopy = document.getElementById("about-copy");
   const interestList = document.getElementById("interest-list");
   const researchTimeline = document.getElementById("research-timeline");
@@ -18,6 +19,7 @@
     .filter(Boolean);
 
   let papers = [];
+  let publicationHighlights = {};
 
   const cacheBusted = path => path ? `${path}${path.includes("?") ? "&" : "?"}v=${CACHE_BUST}` : "";
   const socialIcons = {
@@ -86,7 +88,19 @@
 
     heroName.innerHTML = (data.nameLines || []).map(escapeHTML).join("<br>");
     heroStatement.innerHTML = data.statementHtml || multilineEmphasisHTML(data.statement || "");
+    heroIntroduction.innerHTML = multilineEmphasisHTML(data.introduction || "");
     aboutCopy.innerHTML = data.aboutHtml || emphasisHTML(data.about || "");
+
+    document.getElementById("research-vision").textContent = data.researchVision || "";
+    const themes = document.getElementById("research-themes");
+    themes.innerHTML = "";
+    (data.researchThemes || []).forEach(theme => {
+      const entry = document.createElement("li");
+      const related = (theme.papers || []).map(id => papers.find(paper => paper.id === id)).filter(Boolean);
+      const links = related.map(paper => `<a href="paper.html?id=${encodeURIComponent(paper.id)}" target="_blank" rel="noreferrer">${escapeHTML(paper.title)}</a>`).join("");
+      entry.innerHTML = `<span>${escapeHTML(theme.stage)}</span><div><h3>${escapeHTML(theme.title)}</h3><p>${escapeHTML(theme.description)}</p>${links ? `<nav class="research-paper-links" aria-label="Related publications">${links}</nav>` : ""}</div>`;
+      themes.appendChild(entry);
+    });
 
     interestList.innerHTML = "";
     (data.interests || []).forEach(interest => {
@@ -146,7 +160,8 @@
         card.href = `paper.html?id=${encodeURIComponent(paper.id)}`;
         card.target = "_blank";
         card.rel = "noreferrer";
-        card.innerHTML = `<span class="publication-visual">${visualHTML(paper)}</span><span><span class="publication-title">${escapeHTML(paper.title)}</span><span class="publication-authors">${authorHTML(paper.authors)}</span><span class="publication-venue">${escapeHTML(paper.venue)}</span></span>`;
+        const highlight = publicationHighlights[paper.id];
+        card.innerHTML = `<span class="publication-visual">${visualHTML(paper)}</span><span><span class="publication-title">${escapeHTML(paper.title)}</span><span class="publication-authors">${authorHTML(paper.authors)}</span><span class="publication-venue">${escapeHTML(paper.venue)}</span>${highlight ? `<span class="publication-summary">${escapeHTML(highlight)}</span>` : ""}</span>`;
         group.querySelector(".publication-grid").appendChild(card);
       });
       list.appendChild(group);
@@ -189,7 +204,7 @@
   }
 
   Promise.all([
-    fetch(cacheBusted("data/profile.json")).then(response => {
+    fetch("data/profile.json?v=20261020a").then(response => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
     }),
@@ -199,8 +214,9 @@
     })
   ])
     .then(([profileData, publicationData]) => {
-      renderProfile(profileData);
       papers = publicationData.publications || [];
+      publicationHighlights = profileData.publicationHighlights || {};
+      renderProfile(profileData);
       renderPublications();
       if (publicationData.lastUpdated && siteStamp) siteStamp.textContent = `Last updated ${publicationData.lastUpdated}`;
       if (location.hash) syncFromHash();

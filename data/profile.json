@@ -2,11 +2,13 @@
   "name": "Seonji Kim",
   "nameLines": ["Seonji Kim"],
   "heroMeta": ["Ph.D. Student", "KAIST"],
-  "statement": "Designing Spatial Experiences, Building Adaptive Spaces, and Researching Spatial Intelligence.",
-  "statementHtml": "<em>Designing Spatial Experiences, Building Adaptive Spaces, and Researching Spatial Intelligence.</em>",
-  "about": "I am a Ph.D. student in the Graduate School of Culture Technology at KAIST and a member of the Ubiquitous Virtual Reality Lab, advised by Prof. Woontack Woo. My research aims to create adaptive spatial experiences mediated by physical environments, viewing space not merely as a backdrop but as an active medium for interaction, perception, and collaboration. My previous work has focused on establishing spatial correspondences across heterogeneous environments to support shared mixed-reality experiences. I am currently exploring AI-driven approaches that interpret collaborative contexts and physical environments to infer spatial requirements and configure adaptive MR workspaces.\n\nMore broadly, I aim to advance spatial computing toward intelligent systems that can perceive, reason about, and adapt to the physical world, with broader connections to embodied and physical AI. I am currently seeking postdoctoral opportunities to further pursue and expand this research direction.",
-  "aboutHtml": "<strong>I am a Ph.D. student in the <a href=\"https://ct.kaist.ac.kr/\" target=\"_blank\" rel=\"noreferrer\">Graduate School of Culture Technology at KAIST</a> and a member of the <a href=\"https://uvrlab.org/\" target=\"_blank\" rel=\"noreferrer\">Ubiquitous Virtual Reality Lab</a>, advised by Prof. Woontack Woo.</strong> My research aims to create adaptive spatial experiences mediated by physical environments, viewing space not merely as a backdrop but as an active medium for interaction, perception, and collaboration. My previous work has focused on establishing spatial correspondences across heterogeneous environments to support shared mixed-reality experiences. I am currently exploring AI-driven approaches that interpret collaborative contexts and physical environments to infer spatial requirements and configure adaptive MR workspaces.<br><br>More broadly, I aim to advance spatial computing toward intelligent systems that can perceive, reason about, and adapt to the physical world, with broader connections to embodied and physical AI. <strong>I am currently seeking postdoctoral opportunities to further pursue and expand this research direction.</strong>",
-  "cvAbout": "Ph.D. student in the Graduate School of Culture Technology at KAIST and member of the Ubiquitous Virtual Reality Lab, advised by Prof. Woontack Woo. Research lies at the intersection of spatial computing, mixed reality, and spatial intelligence, with a focus on designing adaptive spatial experiences mediated by physical environments.\n\nCurrent work investigates AI-driven approaches for interpreting collaborative context and physical space to infer spatial requirements and configure adaptive mixed reality workspaces. Long-term research aims to advance intelligent spatial computing systems that can perceive, reason about, and adapt to the physical world. Actively seeking postdoctoral opportunities to further develop this research agenda.",
+  "statement": "Connecting Physical Spaces, Enabling Human-Centered Collaboration",
+  "statementHtml": "<em>Connecting Physical Spaces, Enabling Human-Centered Collaboration</em>",
+  "introduction": "My research focuses on spatial computing and mixed reality, particularly spatial representation, affordance-aware mapping, and adaptive spatial experiences across different physical environments.\n\nBuilding on this foundation, I am exploring how spatial and social contexts shape human experiences, and how intelligent systems can better understand human activities and support context-aware interactions.",
+  "about": "I am a Ph.D. student in the Graduate School of Culture Technology at KAIST and a member of the Ubiquitous Virtual Reality Lab, advised by Prof. Woontack Woo. My research focuses on spatial computing and mixed reality, particularly spatial representation, affordance-aware mapping, and adaptive spatial experiences across different physical environments.\n\nBuilding on this foundation, I am exploring how spatial and social contexts shape human experiences, and how intelligent systems can better understand human activities and support context-aware interactions. I welcome conversations about postdoctoral opportunities and research collaborations.",
+  "aboutHtml": "<strong>I am a Ph.D. student in the <a href=\"https://ct.kaist.ac.kr/\" target=\"_blank\" rel=\"noreferrer\">Graduate School of Culture Technology at KAIST</a> and a member of the <a href=\"https://uvrlab.org/\" target=\"_blank\" rel=\"noreferrer\">Ubiquitous Virtual Reality Lab</a>, advised by Prof. Woontack Woo.</strong> My research focuses on spatial computing and mixed reality, particularly spatial representation, affordance-aware mapping, and adaptive spatial experiences across different physical environments.<br><br>Building on this foundation, I am exploring how spatial and social contexts shape human experiences, and how intelligent systems can better understand human activities and support context-aware interactions. I welcome conversations about <a href=\"mailto:seonji.kim@kaist.ac.kr\">postdoctoral opportunities and research collaborations</a>.",
+  "cvAbout": "I am a Ph.D. student in the Graduate School of Culture Technology at KAIST, advised by Prof. Woontack Woo in the Ubiquitous Virtual Reality Lab.\n\nMy research focuses on spatial computing and mixed reality, particularly spatial representation, affordance-aware mapping, and adaptive spatial experiences across different physical environments. More recently, I have been exploring how spatial and social contexts shape user experiences, with a growing interest in how AI can support context-aware interactions.\n\nMy long-term goal is to develop intelligent spatial computing systems that better understand and adapt to human activities and physical environments. I am currently seeking postdoctoral opportunities to further pursue this direction.",
+  "cvWebsite": "https://seonjikim.com/",
   "cvInterests": [
     "Spatial Computing",
     "Mixed Reality",
@@ -32,8 +34,33 @@
   "interests": [
     "Spatial Computing",
     "Mixed Reality",
-    "Spatial Intelligence"
+    "Human-Centered Spatial Interaction"
   ],
+  "researchVision": "From enabling spatial correspondence to understanding and supporting collaboration within shared environments.",
+  "researchThemes": [
+    {
+      "stage": "Established research",
+      "title": "Spatial Representation and Mapping",
+      "description": "I develop scene-graph representations and geometric mapping methods that capture semantic relationships and spatial affordances. My published work on Geometric Spatial Affordance Graphs, object-cluster registration, and affine mapping establishes correspondences between heterogeneous physical environments while preserving opportunities for interaction.",
+      "papers": ["object-cluster", "affine-spaces", "subspace-allocation", "mutual-space"]
+    },
+    {
+      "stage": "Ongoing research",
+      "title": "Human-Centered Shared Mixed Reality",
+      "description": "Building on these spatial foundations, I investigate how physical constraints and interpersonal spatial relationships shape distributed MR collaboration. This direction examines spatial configurations, proxemics, and F-formations in relation to social presence, co-presence, and collaborative behavior."
+    },
+    {
+      "stage": "Future research interests",
+      "title": "Spatially Aware Human-AI Interaction",
+      "description": "I am interested in how machine-interpretable spatial representations could establish shared context between people and AI agents. Future questions include how assistance might account for human activities, environmental constraints, and social relationships to support adaptive interaction and human-AI coordination in shared environments."
+    }
+  ],
+  "publicationHighlights": {
+    "object-cluster": "Matching individual objects can miss the relationships that make a space usable. Geometric Spatial Affordance Graphs and Object Cluster Registration align groups of objects across dissimilar rooms to preserve multi-object interaction in shared virtual spaces.",
+    "affine-spaces": "Dissimilar layouts make continuous spatial correspondence difficult. Spatial affordance-aware affine patches align interaction zones and object relationships, supporting object matching and user movement across shared MR spaces.",
+    "subspace-allocation": "A common overlap can shrink as more remote users join. Separating perceivable space from each user's interactable subspace supports a shared view while allocating interaction areas suited to different physical layouts.",
+    "mutual-space": "Different spatial matching methods use incompatible representations. A proposed mutual-space representation brings physical space, spatial matching, and collaboration context into a common structure to support their integrated use in remote MR collaboration."
+  },
   "research": [
     {
       "period": "2024–Present",

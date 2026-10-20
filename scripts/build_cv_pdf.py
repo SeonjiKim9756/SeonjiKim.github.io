@@ -108,7 +108,8 @@ def build_styles() -> dict[str, ParagraphStyle]:
             parent=styles["BodyText"],
             fontName="Helvetica",
             fontSize=10,
-            leading=15,
+            leading=14,
+            spaceBefore=0,
             textColor=PALETTE["muted"],
         ),
         "section": ParagraphStyle(
@@ -118,6 +119,7 @@ def build_styles() -> dict[str, ParagraphStyle]:
             fontSize=12,
             leading=14,
             textColor=PALETTE["ink"],
+            spaceBefore=4,
             spaceAfter=6,
         ),
         "label": ParagraphStyle(
@@ -162,6 +164,7 @@ def build_styles() -> dict[str, ParagraphStyle]:
             textColor=PALETTE["muted"],
             spaceBefore=4,
             spaceAfter=6,
+            keepWithNext=True,
         ),
         "pub_title": ParagraphStyle(
             "PubTitle",
@@ -170,7 +173,9 @@ def build_styles() -> dict[str, ParagraphStyle]:
             fontSize=8.8,
             leading=11,
             textColor=PALETTE["ink"],
+            spaceBefore=0,
             spaceAfter=1,
+            keepWithNext=True,
         ),
         "pub_meta": ParagraphStyle(
             "PubMeta",
@@ -179,6 +184,7 @@ def build_styles() -> dict[str, ParagraphStyle]:
             fontSize=7.8,
             leading=10,
             textColor=PALETTE["muted"],
+            spaceBefore=0,
         ),
         "footer": ParagraphStyle(
             "Footer",
@@ -193,7 +199,7 @@ def build_styles() -> dict[str, ParagraphStyle]:
 
 
 def section_heading(text: str, styles: dict[str, ParagraphStyle]) -> list:
-    return [Spacer(1, 10), Paragraph(text, styles["section"]), HRFlowable(width="100%", thickness=0.6, color=PALETTE["line"]), Spacer(1, 8)]
+    return [Spacer(1, 6), Paragraph(text, styles["section"]), HRFlowable(width="100%", thickness=0.6, color=PALETTE["line"]), Spacer(1, 6)]
 
 
 def make_timeline(items: list[dict], styles: dict[str, ParagraphStyle], include_meta: bool = True) -> Table:
@@ -254,7 +260,7 @@ def make_publication_block(paper: dict, styles: dict[str, ParagraphStyle]) -> li
     return [
         Paragraph(paper["title"], styles["pub_title"]),
         Paragraph(summary, styles["pub_meta"]),
-        Spacer(1, 3),
+        Spacer(1, 5),
     ]
 
 
@@ -286,7 +292,7 @@ def build_pdf() -> None:
         author="Seonji Kim",
     )
 
-    updated_stamp = f"Latest update: {publications.get('lastUpdated', 'August 2026')}"
+    updated_stamp = f"Last updated: {publications['lastUpdated']}"
     story = []
 
     email_link = ""
@@ -301,6 +307,9 @@ def build_pdf() -> None:
     ]
     if email_link:
         intro_left.append(Paragraph(email_link, styles["contact"]))
+    if profile.get("cvWebsite"):
+        website = profile["cvWebsite"]
+        intro_left.append(Paragraph(f'<link href="{website}">{website}</link>', styles["contact"]))
     intro_right = [Paragraph(updated_stamp, styles["stamp"])]
 
     intro_table = Table([[intro_left, intro_right]], colWidths=[CONTENT_WIDTH - 54 * mm, 54 * mm])
@@ -315,11 +324,13 @@ def build_pdf() -> None:
             ]
         )
     )
-    story.extend([intro_table, Spacer(1, 10), HRFlowable(width="100%", thickness=0.8, color=PALETTE["line"]), Spacer(1, 12)])
+    story.extend([intro_table, Spacer(1, 6), HRFlowable(width="100%", thickness=0.8, color=PALETTE["line"]), Spacer(1, 6)])
 
     story.extend(section_heading("About", styles))
-    story.append(paragraph(profile.get("cvAbout", profile.get("about", "")), styles["body"]))
-    story.append(Spacer(1, 10))
+    for block in profile.get("cvAbout", profile.get("about", "")).split("\n\n"):
+        story.append(paragraph(block, styles["body"]))
+        story.append(Spacer(1, 4))
+    story.append(Spacer(1, 6))
     story.append(Paragraph("RESEARCH INTERESTS", styles["label"]))
     story.append(Spacer(1, 4))
     story.append(Paragraph(" · ".join(profile.get("cvInterests", profile.get("interests", []))), styles["body"]))
