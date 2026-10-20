@@ -5,7 +5,6 @@
   const heroMeta = document.getElementById("hero-meta");
   const heroName = document.getElementById("hero-name");
   const heroStatement = document.getElementById("hero-statement");
-  const heroIntroduction = document.getElementById("hero-introduction");
   const aboutCopy = document.getElementById("about-copy");
   const interestList = document.getElementById("interest-list");
   const researchTimeline = document.getElementById("research-timeline");
@@ -88,7 +87,6 @@
 
     heroName.innerHTML = (data.nameLines || []).map(escapeHTML).join("<br>");
     heroStatement.innerHTML = data.statementHtml || multilineEmphasisHTML(data.statement || "");
-    heroIntroduction.innerHTML = multilineEmphasisHTML(data.introduction || "");
     aboutCopy.innerHTML = data.aboutHtml || emphasisHTML(data.about || "");
 
     document.getElementById("research-vision").textContent = data.researchVision || "";
@@ -204,7 +202,7 @@
   }
 
   Promise.all([
-    fetch("data/profile.json?v=20261020a").then(response => {
+    fetch("data/profile.json?v=20261020g").then(response => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
     }),
